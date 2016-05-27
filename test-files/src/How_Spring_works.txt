@@ -1,0 +1,30 @@
+> Bean Definitions Loaded "- Registered bean definition for..."
+	ConfigurationClassBeanDefinitionReader.loadBeanDefinitions() ->
+		for ConfigurationClass -> loadBeanDefinitionsForConfigurationClass(ConfigurationClass...)
+	loadBeanDefinitionsForConfigurationClass ->
+		· registerBeanDefinitionForImportedConfigurationClass
+		· loadBeanDefinitionsForBeanMethod
+		· loadBeanDefinitionsFromImportedResources
+		· loadBeanDefinitionsFromRegistrars
+
+	For instance:
+
+		if (logger.isDebugEnabled()) {
+			logger.debug(String.format("Registering bean definition for @Bean method %s.%s()",
+					configClass.getMetadata().getClassName(), beanName));
+		}
+
+		this.registry.registerBeanDefinition(beanName, beanDefToRegister);
+
+	Then:
+
+		09:36:06.428 [main] DEBUG o.s.c.a.ConfigurationClassEnhancer - Successfully enhanced com.malsolo.springframework.batch.sample.MainForSpringInfo; enhanced class name is: com.malsolo.springframework.batch.sample.MainForSpringInfo$$EnhancerBySpringCGLIB$$9c916fe
+
+> Post Process Bean Definitions "- Replacing bean definition..."
+	ConfigurationClassPostProcessor.enhanceConfigurationClasses()
+
+
+> For each bean
+	Instantiate bean
+	Call setters
+	Bean Post Processors

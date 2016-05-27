@@ -1,0 +1,45 @@
+
+Error:
+2014-08-04T10:53:04.646+0200 [initandlisten] ERROR: listen(): bind() failed errno:98 Address already in use for socket: 0.0.0.0:27017
+
+Solution
+http://stackoverflow.com/a/17329802/825336
+
+ps wuax | grep mongo
+
+mongodb    990  0.4  0.3 514320 12540 ?        Ssl  09:35   0:34 /usr/bin/mongod --config /etc/mongod.conf
+jbeneito  7171  0.0  0.0  15944   940 pts/1    S+   11:49   0:00 grep --color=auto mongo
+
+Trying:
+$ sudo service mongodb stop
+mongodb: unrecognized service
+
+$ mongod --versiondb version v2.6.3
+2014-08-04T12:19:04.667+0200 git version: 255f67a66f9603c59380b2a389e386910bbb52cb
+
+So https://jira.mongodb.org/browse/SERVER-10871 seems not to apply (Fix Version/s: 2.5.3)
+
+This http://stackoverflow.com/a/11776728/825336 reminds me to use:
+
+/etc/init.d/mongod stop
+
+See /var/log/mongodb/mongod.log.
+
+But that doesn't appear at http://docs.mongodb.org/manual/tutorial/manage-mongodb-processes/
+
+mongod --shutdown didn't work either. ==> http://docs.mongodb.org/manual/reference/program/mongod/#bin.mongod
+
+I almost unistall to install again (http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/)
+
+But seeing 
+$ dpkg --get-selections | grep -v deinstall | grep mongo
+mongodb-org					install
+mongodb-org-mongos				install
+mongodb-org-server				install
+mongodb-org-shell				install
+mongodb-org-tools				install
+
+Everything seems OK.
+
+So no need for apt-get remove --purge packagename nopr apt-get purge packagename
+

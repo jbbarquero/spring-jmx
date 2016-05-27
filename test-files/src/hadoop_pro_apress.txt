@@ -1,0 +1,130 @@
+Un blog muy similar a:
+http://www.adictosaltrabajo.com/tutoriales/tutoriales.php?pagina=hadoop_first_steps
+http://www.adictosaltrabajo.com/tutoriales/tutoriales.php?pagina=mapreduce_basic
+http://www.adictosaltrabajo.com/tutoriales/tutoriales.php?pagina=spring-data-hadoop
+
+Pero siguiendo los capítulos 2, 3 y 4 (¿1 con el ejemplo? de manning)
+
+Luego: https://www.youtube.com/watch?v=tIPA6vMZomQ (Getting started with Spring Data and Apache Hadoop)
+
+Luego Spark
+Luego Storm
+Luego Spring XD
+Luego Spring Reactor / ¿Akka? / Vert.x
+Luego Spring Boot
+
+EMEPZAR por Manning 4: Writing basic MapReduce programs
+
+Luego O'Reilly 3, 4, 5, 6 (pché)
+
+Table of Contents
+1. Motivation for Big Data
+  "Applications Are Moved to the Data"
+  "Big Data Programming Models"
+    · Massively Parallel Processing (MPP) Database Systems
+    · In-Memory Database Systems
+    · MapReduce Systems
+    · Bulk Synchronous Parallel (BSP) Systems
+2. Hadoop Concepts
+  "Introducing Hadoop"
+  At its core, Hadoop is a Java–based MapReduce framework, but has evolved to have a complete ecosystem:
+  · Zookeeper
+  · YARN (Spark, Tez, Giraph, MLBase)
+  · Hive
+  · Oozie
+  · Avro
+  · HBase
+  · Pig
+  · Flume
+  · Solr
+  · Impala
+  "Introducing the MapReduce Model"
+  · Map: An initial ingestion and transformation step in which individual input records can be processed in parallel.
+  · Reduce: An aggregation or summarization step in which all associated records must be processed together by a single entity
+
+http://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html#Overview
+"Hadoop MapReduce is a software framework for easily writing applications which process vast amounts of data (multi-terabyte data-sets) in-parallel on large clusters (thousands of nodes) of commodity hardware in a reliable, fault-tolerant manner."
+
+  "Components of Hadoop" (2.0, 1.0 had JobTracker and TaskTracker)
+  · NameNode
+  · DataNode
+  · Secondary NameNode
+  · ResourceManager
+  · NodeManager
+  
+  "Hadoop Distributed File System (HDFS)"
+  · Block Storage Nature of Hadoop Files (64 MB)
+  · File Metadata and NameNode 
+  · Mechanics of an HDFS Write
+  · Mechanics of an HDFS Read
+  · Mechanics of an HDFS Delete
+  · Ensuring HDFS Reliability
+  "Secondary NameNode"
+  "TaskTracker"
+  "JobTracker"
+  
+  "Hadoop 2.0" ==> YARN
+  JobScheduler: Resource management and Job scheduling/job monitoring
+  Components:
+  · Global Resource Manager
+  · Node Manager
+  · Application-specific Application Master
+  · Scheduler
+  · Container
+  
+  "HDFS High Availability"
+
+3. Getting Started with the Hadoop Framework
+
+"Types of Installation": Stand-Alone Mode, Pseudo-Distributed Cluster, Multinode Node Cluster Installation (plus Amazon EMR or Cloudera Manager)
+
+"Components of a MapReduce program"
+· Client Java program
+· Custom Mapper class
+· Custom Reducer class
+· Client-side libraries
+· Remote libraries
+· Java Application Archive (JAR) files
+
+"Your First Hadoop Program": WordCount
+
+Oops: "Third-Party Libraries in Hadoop Jobs" worths a look.
+
+4. Hadoop Administration
+
+See manning chapter 2.
+
+I need chapter 3 to write my blog post (that should be a combination of the chapters 2 and 3)
+
+5. Basics of MapReduce Development
+6. Advanced MapReduce Development
+7. Hadoop Input Output
+8. Testing Hadoop Programs
+9. Monitoring Hadoop
+10. Data Warehousing using Hadoop
+11. Data Processing using Pig
+12. HCatalog and Hadoop in the Enterprise
+13. Log Analysis using Hadoop
+14. Building Real-Time Systems using HBase
+15. Data Science With Hadoop
+16. Hadoop in the Cloud
+17. Building a YARN Application
+18. Appendix A
+19. Appendix B
+20. Appendix C
+
+From Hadoop - Just the Basics for Big Data Rookies (https://www.youtube.com/watch?v=xYnS9PQRXTg)
+
+- Hadoop core project is a distributed fault-tolerant data storage and batch processing that provides linear scalability on commodity hardware.
+It's an Apache project mostly written in Java. It's intended for processing petabytes data sets.
+
+- HDFS Overview:
+· UNIX-like file system, that splits large files into blocks that are distributed and replicated among nodes. There are two types of nodes: master and slave.
+
+NameNode: master (point of failure in HDFS 1.x)
+
+Hadoop Ecosystem:
+· Core technologies
+- HDFS
+- MapReduce
+

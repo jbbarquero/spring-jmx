@@ -1,0 +1,67 @@
+----- LUNES
+### M:
+* E15: 3 listados (método filter) ordenadas por SLA, fecha de creación (cambiar la descendencia)
+1 hora (método compareTo de ProcesoEntity)
+> Se cambia el orden de las fechas. El resto permanece. ¿Es necesario modificar el comportamiento de la ordenación por SLA?
+* E34: añadir como destinatarios de todos los correos a maestrodegruposugcyg.es@bbva.com
+1 hora.
+> Se añade en CC
+* E7: El campo iteraciones cambiarlo al paso finalizar (obligatorio)
+Cambiarlo de Step.
+1 hora.
+### T:
+* E1: campo nuevo tras analizar. StepAnalizar. Añadir cabeceras de correos. 
+4 horas.
+E1_campo_en_analizar_para_tipificar_grupos_afectados_por_peticion
+
+----- MARTES
+### M:
+· E5: crear peticiones hijas. Añadir en el paso de crear la recepción de id_padre igual que se hace en analizar.
+4 horas.
+### T:
+· E35:
+- Crear XML para la petición y ponerlos en la aplicación
+- Añadir el paso "Asignar" al enumerado de pasos
+- Añadir el Step "Asignar": atributos, operador y observaciones.
+Que la vista proporcione operadorUGCyG como dato, y se asignará solo al proceso.
+Para probarlo, podrá ir siempre o no, pero es probable que sí.
+4 horas.
+
+----- MIÉRCOLES, JUEVES, VIERNES
+· Adicional: refactorización búsquedas con el TextSearch
+24 horas
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+mvn appengine:devserver -P debug -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.test.skip=true
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+· E14: 
+- Método separado
+- Hilo independiente
+- Sacar los procesos paginados
+- Actualizar proceso a proceso
+- ¿Qué pasa con los fallos?
+24 horas
+16 horas
+ALTERNATIVA: recalcular concretos.
+--> Poner UO a nulo cuando falle.
+· E29: Calcular UOs por usuario con precedencia sobre la otra columna (ver definición de grupos.xls)
+8 horas.
+· E8: hecha
+· E10: dejar inoperativa la aplicación
+Servicio de inopeatividad (para establecer y desestablecer)
+Entidad (Tabla) con estado y mensaje. No fecha.
+Los métodos de actuación comprobarán que esté activo o no para responder: lanzar una excepción HerramientaInoperativaException(estado) ->
+	-> En Resource devolver un 200 OK y un JSON informando del estado y el mensaje.
+8 horas.
+
+· E35: Añadir en ProcesoEntity un listado de procesos hijos (además del existente procesosHijosNoCompletados a recoger en el método ProcesoGestor.get )
+4 horas.
+
+Architecture:
+· Reduce dependencies
+· Leverage standars
+	Industry standards
+	Corporate standars
+	
+· Product agnostic archt
+· Domain specific archt

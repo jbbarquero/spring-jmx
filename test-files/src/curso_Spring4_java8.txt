@@ -1,0 +1,50 @@
+Código: XXX
+Título: Desarrollo con Spring 4 e introducción a Java 8 (50 horas)
+
+Requisitos: 
+Conocimientos de Java suficientes, conocimientos y algo de uso del framework Spring.
+
+Objetivos: 
+Presentación de las novedades de Java 8, mejorar y profundizar el conocimiento de Spring, mostrar las novedades de Spring 4, asentar las bases de la autoformación y cubrir la configuración por xml y java, inyección de dependencias, jdbc template, transacciones, AOP, MVC, security, tests. 
+
+Duración:
+50 horas. Del XX al XX de Mayo en horario de 9h a 14h. 
+
+> Java 8: Introducción (5 horas)
+- Funciones en Java: métodos como ciudadanos de primera clase y Lambda expressions
+- Streams
+- Métodos por defecto
+- Clase Optional
+- Nueva API Date y Time
+
+> Contenedor Spring y DI (10 horas)
+- Contenedor: configuración (Java, XML, anotaciones), scopes
+- Ciclo de vida: inicialización, construcción, BeanFactoryPostProcessor y BeanPostProcessor.
+- DI avanzado: entornos, perfiles, beans condicionales
+- AOP: conceptos (join cut, join point, advice, aspect), weaving (before, after-returning, after-throwing, around, introduction), implementación de Spring, auto proxy
+- Autoformación: validación y conversión en Spring. Resource en Spring.
+
+> Spring web (10 horas)
+ - MVC: patrón en Spring, root application context y jerarquía de app context, ContextLoaderListener.
+ - DispatcherServlet, controllers, handler mappings, view resolvers, i18n, themes, excepcion handling
+ - REST: ResponseBody, RestController, RestTemplate. Introucción a WebSockets
+ - Autoformación: vistas en Spring (JSP, Thymeleaf, Tiles)
+
+> Acceso a datos con Spring (10 horas)
+- JDBC: jerarquía DataAccesException, Jdbc template, mapping rows, uso con Java 8.
+- Transacciones: PlatformTransactionManager, @Transactional, rollbackFor y nonRollbackFor.
+- JPA2: PlatformTransactionManager, @PersistenceContext
+- Spring Data: JPA, MongoDB, REST.
+- Autoformación: Hibernate, MyBatis.
+
+> Testing e integración (10 horas):
+- Testing: core, web.
+- Mensajería en Spring: JMS, AMQP, email.
+- Autoformación: manejo Spring beans con JMX.
+
+> Spring Security y otros proyectos (5 horas)
+- Security, conceptos: delegating filter proxy, security filter chain, Authentication, Granted Authorities.
+- Security, configuración (básica y avanzada)
+- Security, autenticación y autorización.
+- Introducción a Spring Boot
+- Autoformación: otros proyectos de Spring (WebFlow, Batch, Integration, y un largo etcétera)

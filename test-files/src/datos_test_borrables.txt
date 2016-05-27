@@ -1,0 +1,59 @@
+· UserSessionBean
+UserSessionBean {"userId":"josemanuel.gomez.garrido.contractor@dev.bbva.com","nickname":"JOSE MANUEL","firstName":"JOSE MANUEL","lastName":"GOMEZ GARRIDO","email":"josemanuel.gomez.garrido.contractor@dev.bbva.com","domain":"dev.bbva.com","locale":"en_US","locales":["en_US","en","es"],"timeZone":"Europe/Madrid","administrator":false,"defLanguage":"en","functionalCode":"IHV","country":"ESPAÑA","countryCode":"ESP","companyCode":"0001","ous":[{},{},{},{},{},{},{},{},{},{},{}],"employeeId":"XE41249","companyName":"ACIONES Y TRATAMIENTO DE","company":"APLICACIONES Y TRATAMIENTO DE","funtionalChargeDescription":"ANAQUEL - PROGRAMADOR","sIsEmployee":"N","sFirstSurname":"GOMEZ","hasPhoto":false,"workplaceDescription":"ED.ISLA CHAMART(PERS","workplaceCode":"00012259","workplaceLatitude":"40.4878916","workplaceLongitude":"-3.6694757","costCenterCode":"4670","costCenterDescription":"SISTEMAS COLABORATIVOS","phoneNumber":"","mobilePhoneNumber":"","coorporatePhoneNumber":"","coorporateMobilePhoneNumber":"","department":"SISTEMAS COLABORATIVOS","userPreferences":{"user":"josemanuel.gomez.garrido.contractor@dev.bbva.com","theme":"original","insertDate":1.408704439473E12,"updateDate":1.408704439474E12},"domainPreferences":{"domain":"dev.bbva.com","skin":"dev.bbva.com","insertDate":1.372766946506E12,"updateDate":1.372766946506E12},"floorDescription":"AV. MANOTERAS  20 - PLANTA 5","roles":[]}
+
+
+· Filtros
+
+{ambitos=5066549580791808, agrupadores=5770237022568448;5207287069147136, id=CRM enquiries, tipologias=4785074604081152;5910974510923776;6192449487634432, fecha_creacion_inicio=13-11-2014, fecha_creacion_fin=13-11-2014}
+
+· uniqueFilters
+{id=CRM enquiries, fecha_creacion <=1415919599999, usuario=XE41249, fecha_creacion >=1415833200000}
+
+· multipleFilters
+{tipologias=4785074604081152;5910974510923776;6192449487634432, ambitos=5066549580791808, agrupadores=5770237022568448;5207287069147136}
+
+· Proceso
+{"id":"CRM_1415887479032_0000300002","id_definicion_proceso":"GE_1","steps":[],"stepsSorted":[],"stepList":[],"gruposSteps":[],"userFirstname":"JOSE MANUEL","userLastname":"GOMEZ GARRIDO","fecha_creacion":1415887478846,"updated":1415887478945,"masiva":"individual","uo_peticionaria":"3","uo_peticionariaFirstLevel":"10","estadoProceso":2,"procesoHijos":[],"procesosHijosNoCompletados":[],"ambito":"5066549580791808","entradaPeticion":"Formulario","peticionarioEmail":"josemanuel.gomez.garrido.contractor@dev.bbva.com","gestores_destino":[],"texto_de_consulta":"Inquiry request text","grupo_actual":"2","transiciones_disponibles":["tramitar;[2]","rechazar;[2, 2]"],"currentProcess":[""],"usuario":"XE41249","ou":["00030019","00003053","00000063","00005513","00030021"],"bloqueado":false,"sla":2.0,"machineSnapshotId":"CRM_1415887479032_0000300002"}
+
+
+
+
+
+
+
+
+=======================================================================
+mvn appengine:devserver -P debug -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.test.skip=true
+
+id_definicion_proceso=CRM_9
+masiva="individual"
+nombre_del_grupo="Grupo"
+pais_del_grupo=1
+
+id_definicion_proceso: "CRM_9"
+masiva: "individual"
+nombre_del_grupo: "Grupo"
+pais_del_grupo: "1"
+
+emailString: "josemanuel.gomez.garrido.contractor@dev.bbva.com"
+emails: [josemanuel.gomez.garrido.contractor@dev.bbva.com]
+estadoProceso: 2
+id: "CRM_1415955631479_0000300003"
+local_transition: "analizar"
+operadorUGCyG: "U215568"
+transition: "tramitar"
+updated: 1415955631385
+
+$$hashKey: "02N"
+apellidoUsuario: "GOMEZ"
+email: "josemanuel.gomez.garrido.contractor@dev.bbva.com"
+estadoProceso: 2
+fecha_creacion: 1415955781541
+id: 5928566696968192
+idProceso: "CRM_1415955631479_0000300003"
+nombreUsuario: "JOSE MANUEL"
+operadorUGCyG: "U221535"
+type: 2
+uoGroupInStep: "3"
+uoGroupInStepFirstLevel: "10"
+uoGroupInStep_translated: "Business Groups"

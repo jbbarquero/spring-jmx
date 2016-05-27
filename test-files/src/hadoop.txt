@@ -1,0 +1,153 @@
+https://www.youtube.com/watch?v=tIPA6vMZomQ&index=1&list=PLz2AxTYbff2p9NEE3T_r2liAmNbWuzZKF
+9:31
+· Distributed fault-tolerant data storage (HDFS)
+· Distributed fault-tolerant Batch processing (for instance, Map Reduce)
+· a general purpose resource manager
+and scheduler for Hadoop processing 
+
+
+Hadoop primer
+
+During my professional career I had no chance to deal with Big Data. I worked for twelve years for a company that had really huge data, but there was no need to explot it (clients don't require to do so) But now I want to take an overview of this world.
+
+So I've decided to start with Hadoop.
+
+Hadoop Introduction
+
+Hadoop is an open source framework, a fault-tolerant data storage and batch processing system that allows you to write applications for processing really huge data sets across clusters of computers using simple programming model with linear scalability on commodity hardware. Commodity hardware means cheaper hardware than the dedicated servers thar are sold by many vendors. Linear scalability means that you have only to add more machines (nodes) to the Hadoop cluster.
+
+The key concept for Hadoop is move-code-to-data, that is, data is distributed across the nodes of the Hadoop cluster and the applications are distributed to that nodes instead of vice versa (as in Java EE where applications are centralized in a application server and the data is collected to it over the network)
+
+At its core, Hadoop has four parts:
+
+· Common: The common utilities that support the other Hadoop modules.
+· Hadoop Distributed File System (HDFS™): A distributed file system that provides high-throughput access to application data.
+· YARN: A framework for job scheduling and cluster resource management.
+· MapReduce: A YARN-based system for parallel processing of large data sets.
+
+In this introduction blog entry I'm not going to pay attention to the common module of Hadoop. Regarding HDFS, it's the primary distributed storage used by Hadoop applications.
+
+YARN is the result of a complete overhaul of the MapReduce for solving the problems that Hadoop had when you wanted to scale to very large clusters, as a consequence, MapReduce is now a A YARN-based system. Furthermore, YARN also aims to expand the utility of Hadoop beyond MapReduce, so you can write a YARN application to perform a unique task on Hadoop, and this is the foundation for new projects.
+
+Next, a list of some projects that conforms Hadoop ecosystem:
+
+· HBase™: A scalable, distributed database that supports structured data storage for large tables.
+· Hive™: a declarative SQL-like kanguage.
+· Pig™: a procedural language for querying and data transform with scripts.
+· Mahout™: A Scalable machine learning and data mining library.
+· Spark™: an in-memory distributed data processing that breaks problems up over all of the
+Hadoop nodes, but keeps the data in memory for better performance and can be rebuilt with the details stored in the Resilient Distributed Dataset (RDD) from an external store (usually HDFS).
+· Storm: a distributed real-time computation system for processing fast, large streams of data.
+· Tez™: a generalized data-flow programming framework which provides a powerful and flexible engine to execute an arbitrary DAG (Directed Acyclic Graph) of tasks to process data for both batch and interactive use-cases.
+· Zookeeper: a high-performance coordination service for distributed applications.
+
+Finally, MapReduce is a software framework for easily writing applications which process vast amounts of data in-parallel by splitting the input data-set into independent chunks which are processed by the map tasks (initial ingestion and transformation) in parallel, whose outputs are sorted and then passed to the reduce tasks (aggregation or summarization)
+
+Hadoop Distributed File System (HDFS)
+
+The HDFS is designed for distributed storage and distributed processing using commodity hardware. It is a UNIX-like file system, but internally it splits large files into blocks (with size from 32MB to 128MB, typically 64MB), in order to perform a distribution and a replication of these blocks among the nodes of the Hadoop cluster.The apllications that use HDFS usually write data once and read data many times.
+
+The HDFS has the next key services or daemons:
+· Master NameNode: it stores file block to location mappings in the namespace (metadata for
+the files and directories among the DataNodes)
+· Secondary NameNode: it performs checkpoints of the NameNode's namespace and logs. It is not a failover node nor a backup node.
+· Many DataNodes: they're responsible for serving the actual file data (one the client knows which one to use after contacting the NameNode)
+
+http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/images/hdfsarchitecture.png
+
+Hadoop NextGen MapReduce (YARN)
+
+YARN sepaprates resource management and job scheduling/monitoring into separate daemons. In Hadoop 1.x these two functions were performed by the JobScheduler, that implies a bottleneck for scaling the Hadoop nodes in the cluster.
+
+Now, there is a global ResourceManager (RM) and a per-node slave, the NodeManager (NM), that form the data-computation framework.
+
+There is also a per-application ApplicationMaster (AM), for instance, MapReduce (being a MapReduce job an instance of the MapReduce application type) whose duty is the negotiation of resources from the ResourceManager and to work with the NodeManager(s) to execute and monitor the tasks.
+
+http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/yarn_architecture.gif
+
+
+Hadoop installation
+
+[...]
+
+(Apress) Types of Installation:
+· Stand-Alone Mode
+· Pseudo-Distributed Cluster
+· Multinode Node Cluster Installation
+
+
+Other installations:
+· Amazon Elastic MapReduce
+· Cloudera Manager
+· Hortonworks Sandbox
+
+http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html
+http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/ClusterSetup.html
+
+Hadoop first program
+
+(Apress) Components of a MapReduce program
+
+· Client Java program
+· Custom Mapper class
+· Custom Reducer class
+· Client-side libraries
+· Remote libraries
+· Java Application Archive (JAR) files
+
+[Program here]
+
+[...]
+
+
+
+
+
+An interesting note here is that YARN (Yet Another Resource Negotiator) is also known as 	
+
+hadoop
+
+> Directory: bin or sbin? (bin has the hadoop executable)
+
+> Why not maven examples?
+
+> Update the versions
+
+> Falta el main en el primer ejemplo
+
+> 1.8.2 YARN: Yet Another Resource Negotiator
+
+Bad explanation IMHO.
+
+According Apress and Hadoop site, YARN is MapReduce 2:
+
+· Apache Hadoop 2.4.1 (http://hadoop.apache.org/docs/stable/)
+
+Apache Hadoop 2.4.1 consists of significant improvements over the previous stable release (hadoop-1.x).
+
+Here is a short overview of the improvments to both HDFS and MapReduce.
+
+* HDFS Federation
+
+Bla...
+
+* MapReduce NextGen aka YARN aka MRv2 <== ¡!
+
+Bla...
+
+· Apache Hadoop NextGen MapReduce (YARN) (http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html Accesible from http://hadoop.apache.org/ => Documentation => Any release OVER 2 ==> YARN Architecture (Below YARN in the left menu) )
+
+> 2.2 Changes in Hadoop 2
+
+Poorly explained. Very short. Apress book sprends pages.
+
+Yeah, I have to admit that Hadoop page is not very clear at that point:
+
+The project includes these modules:
+
+Hadoop Common: The common utilities that support the other Hadoop modules.
+Hadoop Distributed File System (HDFS™): A distributed file system that provides high-throughput access to application data.
+Hadoop YARN: A framework for job scheduling and cluster resource management.
+Hadoop MapReduce: A YARN-based system for parallel processing of large data sets.
+
+>>>>> NOTE to myself: there is no MapReduce tutorial in the stable documentation () you have to use the current (http://hadoop.apache.org/docs/current/ --> http://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html)

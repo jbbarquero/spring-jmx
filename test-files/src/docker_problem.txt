@@ -1,0 +1,47 @@
+$ sudo docker version
+[sudo] password for Javier: 
+Client version: 1.5.0
+Client API version: 1.17
+Go version (client): go1.4.1
+Git commit (client): a8a31ef
+OS/Arch (client): linux/amd64
+FATA[0000] Error response from daemon: 404 page not found 
+$ env | grep -i proxy
+NO_PROXY=localhost,127.0.0.0/8,::1
+http_proxy=http://T0000104:12345678@proxycorp.geci:8080/
+ftp_proxy=ftp://T0000104:12345678@proxycorp.geci:8080/
+all_proxy=socks://proxycorp.geci:8080/
+ALL_PROXY=socks://proxycorp.geci:8080/
+socks_proxy=socks://T0000104:12345678@proxycorp.geci:8080/
+https_proxy=https://T0000104:12345678@proxycorp.geci:8080/
+no_proxy=localhost,127.0.0.0/8,::1
+$ export NO_PROXY=$NO_PROXY,/var/run/docker.sock
+$ export no_proxy=$no_proxy,/var/run/docker.sock
+$ env | grep -i proxyNO_PROXY=localhost,127.0.0.0/8,::1,/var/run/docker.sock
+http_proxy=http://T0000104:12345678@proxycorp.geci:8080/
+ftp_proxy=ftp://T0000104:12345678@proxycorp.geci:8080/
+all_proxy=socks://proxycorp.geci:8080/
+ALL_PROXY=socks://proxycorp.geci:8080/
+socks_proxy=socks://T0000104:12345678@proxycorp.geci:8080/
+https_proxy=https://T0000104:12345678@proxycorp.geci:8080/
+no_proxy=localhost,127.0.0.0/8,::1,/var/run/docker.sock
+$ export all_proxy=socks://T0000104:12345678@proxycorp.geci:8080/
+$ export ALL_PROXY=socks://T0000104:12345678@proxycorp.geci:8080/
+$ env | grep -i proxyNO_PROXY=localhost,127.0.0.0/8,::1,/var/run/docker.sock
+http_proxy=http://T0000104:12345678@proxycorp.geci:8080/
+ftp_proxy=ftp://T0000104:12345678@proxycorp.geci:8080/
+all_proxy=socks://T0000104:12345678@proxycorp.geci:8080/
+ALL_PROXY=socks://T0000104:12345678@proxycorp.geci:8080/
+socks_proxy=socks://T0000104:12345678@proxycorp.geci:8080/
+https_proxy=https://T0000104:12345678@proxycorp.geci:8080/
+no_proxy=localhost,127.0.0.0/8,::1,/var/run/docker.sock
+$ sudo restart docker
+docker start/running, process 6479
+$ sudo docker version
+Client version: 1.5.0
+Client API version: 1.17
+Go version (client): go1.4.1
+Git commit (client): a8a31ef
+OS/Arch (client): linux/amd64
+FATA[0000] Error response from daemon: 404 page not found 
+$ 

@@ -1,0 +1,74 @@
+28372440000
+2147483647
+yyyyMMdd
+
+1418398957979-1388530800000=29868157979
+1416903240000-1388530800000=28372440000
+
+1416903240000
+1388530800000
+28372440000
+-259200000
+1236837857
+2147483647
+
+
+2147483647
+29868157979
+28372440000
+
+2147483647
+2014122520141225
+
+id_definicion_proceso: "CRM_21"
+masiva: "individual"
+texto_de_consulta: "Texto"
+
+emailString: "josemanuel.gomez.garrido.contractor@dev.bbva.com"
+emails: ["josemanuel.gomez.garrido.contractor@dev.bbva.com"]
+estadoProceso: 12
+id: "CRM_1418291244537_0000300045"
+local_transition: "asignar"
+operadorUGCyG: "U215568"
+transition: "analizar"
+updated: 1418291244359
+
+emailString: "josemanuel.gomez.garrido.contractor@dev.bbva.com"
+emails: ["josemanuel.gomez.garrido.contractor@dev.bbva.com"]
+estadoProceso: 2
+id: "CRM_1418291244537_0000300045"
+local_transition: "analizar"
+observaciones: "Analizar"
+operadorUGCyG: "U215568"
+transition: "tramitar"
+updated: 1418291311227
+
+
+emailString: "josemanuel.gomez.garrido.contractor@dev.bbva.com"
+emails: ["josemanuel.gomez.garrido.contractor@dev.bbva.com"]
+estadoProceso: 5
+id: "CRM_1418291244537_0000300045"
+local_transition: "tramitar"
+operadorUGCyG: "U215568"
+transition: "finalizar"
+updated: 1418291344770
+
+emails: ["josemanuel.gomez.garrido.contractor@dev.bbva.com"]
+estadoProceso: 6
+execution_time: "2"
+id: "CRM_1418291244537_0000300045"
+iteraciones: "1"
+local_transition: "finalizar"
+observaciones: "Mensaje"
+transition: "finalizar"
+updated: 1418291344770
+
+
+id_definicion_proceso: "CRM_52"
+masiva: "individual"
+texto_de_consulta: "Petición"
+==> {"id":"CRM_1418291508249_0000300046","id_definicion_proceso":"CRM_52","steps":[],"stepsSorted":[],"stepList":[],"gruposSteps":[],"userFirstname":"JOSE MANUEL","userLastname":"GOMEZ GARRIDO","fecha_creacion":1418291508205,"fechaFinPorSla":0,"fechaFinPorSlaFormateada":2147483647,"updated":1418291508241,"masiva":"individual","uo_peticionaria":"3","uo_peticionariaFirstLevel":"1000","estadoProceso":12,"procesoHijos":[],"procesosHijosNoCompletados":[],"ambito":"1","entradaPeticion":"Formulario","peticionarioEmail":"josemanuel.gomez.garrido.contractor@dev.bbva.com","gestores_destino":[],"texto_de_consulta":"Petición","grupo_actual":"2","transiciones_disponibles":["analizar;[2]"],"currentProcess":[""],"usuario":"XE41249","ou":["00000063","00003053","00030019","00005513","00030021","00030021","00030021","00030021","00030021","00030021","00030021"],"ouDescripcion":["I&T TECNOLOGIA","SISTEMAS Y ARQUITECTURA","SISTEMAS HOLDING","SIST.GLOBAL GESTION DE EMPRESA","SIST. GLOBALES COLABORATIVOS","SIST. GLOBALES COLABORATIVOS","SIST. GLOBALES COLABORATIVOS","SIST. GLOBALES COLABORATIVOS","SIST. GLOBALES COLABORATIVOS","SIST. GLOBALES COLABORATIVOS","SIST. GLOBALES COLABORATIVOS"],"bloqueado":false,"sla":0.0,"machineSnapshotId":"CRM_1418291508249_0000300046"}
+
+
+
+

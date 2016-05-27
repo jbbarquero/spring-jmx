@@ -1,0 +1,98 @@
+Hadoop Tutorial
+
+· Overview
+
+An open source Apache project started at Yahoo in 2006. It's a distributed fault-tolerant storage and batch processing. It provides lineas scalability on commodity hardware.
+
+ · HDFS (It stores bytes :) with buit in support for multiple formats.)
+
+It's a hierarchical UNIX-like system for data storge by splitting of large files into blocks (typically XXMB but also YMB and ZMB) that are distributed and replicated to nodes.
+
+It has two key services: a MasterNode and many DataNodes. It also has a checkpoint node (poorly named as Secondary NameNode, it isn't a backup)
+
+- NameNode: single master service for HDFS (it was a single point of failure in HDFS 1.x)
+
+It stores file to block location mappins in the namespace.
+
+All transactions are logged to disk.
+
+At startup it reads namesapce image and logs.
+
+- Checkpoint Node (aka Secondary NN): performs checkpoints of the NameNode's namespace and logs (it isn't a backup)
+
+1. Loads up namespace
+2. REads log transactions to modify namespace
+3. Saves namespaces as a checkpoint.
+
+- DataNode: stores block on local disk. It also sends frequent heartbeats to NameNode and block reports too. 
+
+Clients connect to DataNode for I/O.
+
+> How HDFS works: writes
+> How HDFS works: writes
+> How HDFS works: failure
+Block replication
+
+See https://www.youtube.com/watch?v=xYnS9PQRXTg from 15:00
+
+· YARN:
+
+https://www.youtube.com/watch?v=xYnS9PQRXTg#t=1974
+
+Then lots of projects. Just slice the video.
+
+· Map Reduce primer (Great!)
+
+https://www.youtube.com/watch?v=xYnS9PQRXTg#t=4097
+
+
+###################################################
+
+· HDFS Architechture: from Apache Hadoop site
+
+Principle #1: HDFS is the datalake
+Principle #2: Apps share their internal state (through HDFS)
+Principle #3: MapReduce is assembly language of Hadoop
+Principle #4: Apache Bigtop is how the Hadoop distros get defined
+
+The ecosystem: https://www.youtube.com/watch?v=IcuTdJgUFmo&list=PLz2AxTYbff2p9NEE3T_r2liAmNbWuzZKF#t=2237
+
+· HBase
+· Crunch, Pig, Hive, Phoenix
+· Giraph
+· Oozie
+· Mahout
+· Sqoop, Flume
+
+Principle #6: There are always 3 implementations
+
+· HBase (plus GemFire)
+
+I miss that part
+
+· Querying data
+	- Apache Pig: a data manipulation DSL
+	- Apache Hive: a batch-oriented SQL on top of Hadoop
+
+	- [Close to] real-time SQL:
+		* Impala (inspired by Google's F1)
+		* Hive/Tex (AKA Stinger)
+		* Facebook's Presto (Hive's lineage)
+		* Pivotal's HAWQ
+
+Principle #7: SQL on Hadoop
+
+Principle #8: Spark is the techology of 2014
+
+Principle #9: Hadoop in the CLoud is one of many distributed frameworks
+
+
+
+
+
+
+
+
+
+
+

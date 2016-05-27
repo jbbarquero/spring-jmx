@@ -1,0 +1,106 @@
+$ whoami
+
+I am the one that builds Software that run in production.
+
+I am a believer of the Software development best practices.
+
+I am a person who wants to join a good team of Software creators in order to develop the best applications for the clients, while we share knowledge among us and never stop learning. 
+
+· Buzzwords of interest: microservices, DDD/BDD/TDD, docker, reactive programming, big data, event sourcing/CQRS.
+
+· Keywords for recruitres: Java 8; Java EE 7; Spring Framework: boot, cloud, core, mvc, data, integration, batch, security; Hibernate; Maven; SCM: git, svn; AppServers: tomcat, WebSphere; Databases: DB2/Oracle/MySQL/Postgres, MongoDB.
+
+· Objetives: working software, etc...
+
+--------------------------------------------------------------------------------
+>>>>> EXPERIENCE
+
+# AT Sistemas (May 2014 – Now)
+Software Architect, Java EE expert and Spring Framework specialist.
+
+* Proyects
+
+- Viajes El Corte Ingles
+
+Technical Coach in charge of the improvement, fix and evolution for the web applications created for the file department.
+
+Main responsabilities:
+· To define and verify the Software Architecture for each software project.
+· To guarantee the quality of the products inproduction environment.
+· To evolve the application. At this point, several decissions has been made:
+	. To ensure that the current software architecture is really used.
+	. In order to improve the application, update the existing libraries appropriately (the best versions that work with the existing codebase)
+	. Propose alternative architecture for the evolution of the application: CQRS, Event Sourcing, hexagonal architecture (ports and adapters)
+	. Use Domain Driven Design concepts (bounded context, aggregates, repositories...)
+	. Introduction of the idea of microservices
+	. Introduction of newer and more appropriate technologies (Spring Boot, Spring Batch, Quartz, MongoDB, RabbitMQ)
+
+Main technologies
+· WebSphere, Tomcat
+· Oracle, DB2
+· Java 6, 7, 8; Java EE 6
+· Spring 4 (core, mvc, test) plus Spring boot, Spring Cloud, Spring Batch
+· Jenkins, Maven, SVN, GIT
+· Docker PoC
+
+Arquitecto de aplicaciones y empresarial. Experto Java EE y Spring. Referente técnico para proyectos, pre-ventas y aplicaciones.
+	Proyectos
+
+	BBVA. Portal de solicitudes. Fase I: reléase (Noviembre 2014 – Actualidad)
+
+Colaborador como experto Java EE en la finalización para puesta en producción de un portal de solicitudes que tenía problemas de tiempos y desarrollo por la plataforma: Google App Engine (GAE)
+
+Asimilación y verificación de la arquitectura software existente.
+
+Mentor técnico en la plataforma para resolver problemas pendientes: Datastore queries (Java API, Objetify), Text Search, Local Unit Testing, REST/JSON (GSON, Jackson), Task Queues.
+
+Metodología SCRUM con colaboración directa con el cliente. Desarrollos, despliegues y mantenimientos. 
+
+ENTORNO TECNOLÓGICO: Google App Engine (GAE),Angular JS, STS (Eclipse IDE), Ubuntu, GIT, MySQL, Datastore, maven.
+	El Corte Inglés. Portal ICQA. Fase I: lanzamiento (Septiembre –Octubre 2014).
+
+Como parte de la Arquitectura Empresarial de El Corte Inglés (ver proyecto de mayo) se decide crear un portal web de Integración Continua y Aseguramiento de la Calidad.
+
+Definición de la Arquitectura Software de ese proyecto en base a la tecnología existente y el objetivo a cumplir: el control de IC partiendo de las tareas de desarrollo, integrando con los repositorios y aceptando peticiones en línea y trabajos por lotes.
+
+Patrón de Arquitectura CQRS y metodología SCRUM sobre la misma plataforma de El Corte Inglés.
+
+Equipo formado por tres Arquitectos Software y un maquetador.
+
+Labores principales: arquitectura software e implementación de la base del proyecto y los conectores a los productos, en mi caso, el de Rational Team Concert (de IBM Jazz). Coordinar con el director de calidad de El Corte Inglés el desarrollo del portal para su puesta en producción inicial.
+
+ENTORNO TECNOLÓGICO: Oracle DB y Mongo DB, WAS 7, Spring 4 (core, REST y Data), Angular JS, Jenkins, Maven, IBMJazz (Rational Team concert)
+	El Corte Inglés. Pre-venta de implantación de Arquitectura Empresarial (Mayo – Julio 2014)
+
+Definición de la arquitectura de servicios IT de El Corte Inglés para su posterior implantación si el proyecto es aceptado. 
+
+Estudio de la situación actual y la problemática Software en El Corte Inglés para plantear una solución a implantar.
+
+Presentado documento marco de servicios en base al patrón de Arquitectura de Capas por su sencillez y facilidad de comprensión, alternativo al patrón de Arquitectura Orientada a Servicios.
+
+Equipo formado por tres Arquitectos Empresariales, el existente en El Corte Inglés como coordinador y guía junto con dos más para realizar el trabajo. Uno de ellos yo. 
+
+Labores principales: comunicación (ideas, conceptos, problemas y soluciones), colaboración (solicitando pronto y a menudo sus ideas) y clarificación la solución de arquitectura propuesta. 
+
+ENTORNO TECNOLÓGICO: backend HOST, ERP (SAP), BB.DD. (IBM DB2, Oracle DB, Oracle Coherence, MongoDB), computer appliances (Exalogic, Data Power), ESB (WebSphere Broker), app server (WAS), Async I/O (Vert.x, Node.js), IC (IBM Jazz, Jenkins, maven/gradle), IDE (Rational)
+Indra (Octubre 2013 – Abril 2014)
+Arquitecto Software
+
+Referente técnico y Scrum Máster de proyectos Java EE.
+
+Responsable de la Arquitectura Software, tanto del diseño como de su implantación.
+
+Líder del equipo de desarrollo formado por 10 personas, encargado de la creación, asignación y seguimiento de las tareas, así como de la realización de algunas de ellas.
+
+Coordinador de las necesidades del cliente. Partiendo de la descripción funcional, conseguir que se reflejen en la aplicación las solicitudes recibidas.
+
+Mentor del equipo de trabajo, con el objetivo principal de la sinergia de todos los compañeros y como añadido que cada uno salga sabiendo más de lo que sabía cuando empezó.
+
+	Aplicaciones
+	Sistema de gestión de trámites para el Sistema Contribuyente México
+	Sistema de reacarga de vehículos eléctricos para Iberdrola según OCPP
+	Entornos
+	Java EE 5/6, Java 5/6/7 con IBM WebSphere 6.1, Oracle WebLogic Server 11g Release 1 (10.3.6), Apache Tomcat 6.0.35 sobre Oracle Database 11g (11.1.0.6.0), Spring Framework 3 (core, mvc, security, roo), EJB 3.0, JSF 2.0, JSTL 1.2, Servlets 2.5, Java SE 6, JAX-WS 2.0, JMS 1.1 (ActiveMQ y WebSphereMQ), STS 3.4.0, Eclipse Kepler 4.3.0, Maven 3, SVN 1.7.6, GIT, Jenkins, SonarQube, PrimeFaces 3.5, OmniFaces 1.6.3, Mojarra 2.0.4, SLF4J/Log4J/Logback/Commons-logging, H2, JUnit 4.11, MyBatis, Apache commons, JasperReports, OpenCSV, JodaTime 2.3, JQuery, SCRUM.
+
+Redsys (Abril 2011 – Septiembre 2013)
+Arquitecto de integración Java EE 

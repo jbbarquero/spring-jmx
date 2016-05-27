@@ -1,0 +1,1206 @@
+07/05/2014: Install day
+
+> http://www.webupd8.org/2014/04/10-things-to-do-after-installing-ubuntu.html
+
+1. Install Ubuntu AppIndicators (applets)
+sudo add-apt-repository ppa:atareao/atareao
+sudo apt-get update
+
+1.1 Calendar Indicator
+sudo apt-get install calendar-indicator
+
+1.3 My Weather Indicator,
+sudo apt-get install my-weather-indicator
+
+1.4 Variety
+sudo add-apt-repository ppa:peterlevi/ppa
+sudo apt-get update
+sudo apt-get install variety
+
+Sysmonitor
+
+sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor
+sudo apt-get update
+sudo apt-get install indicator-sysmonitor
+
+> http://www.techsupportalert.com/content/tips-and-tricks-ubuntu-after-installation-ubuntu-1404.htm
+
+· Change Default Boot Options: grub-customizer
+
+    sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+    sudo apt-get update
+    sudo apt-get install grub-customizer
+
+> http://www.ubuntu-guia.com/2014/04/despues-de-instalar-ubuntu.html
+
+· COMPIZ
+
+sudo apt-get install compizconfig-settings-manager
+
+· compiz-plugins in Ubuntu Software Center
+
+· ubuntu-restricted-extras
+
+sudo apt-get install ubuntu-restricted-extras
+
+· Synaptic
+
+sudo apt-get install synaptic
+
+· SOFTWARE BÁSICO DE COMPILACIÓN.
+
+sudo apt-get install build-essential
+sudo apt-get install linux-headers-`uname -r`
+
+· Editor de imágenes GIMP
+
+sudo apt-get install gimp
+
+· Editor de vídeo OPENSHOT
+
+sudo apt-get install openshot
+
+
+> https://www.digitalocean.com/community/articles/how-to-install-java-on-ubuntu-with-apt-get
+
+· JAVA
+
+sudo apt-get install default-jdk
+
+Oracle JDK
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+- Oracle JDK 6: sudo apt-get install oracle-java6-installer
+- Oracle JDK 7: sudo apt-get install oracle-java7-installer
+
+--2014-05-08 10:37:00--  (try: 2)  http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.tar.gz?AuthParam=1399538338_398e8a34d1b57aca26d2c28852bd6bc9
+Connecting to download.oracle.com (download.oracle.com)|88.221.14.19|:80... connected.
+HTTP request sent, awaiting response... 206 Partial Content
+Length: 138220064 (132M), 134025760 (128M) remaining [application/x-gzip]
+Saving to: ‘jdk-7u55-linux-x64.tar.gz’
+
+        [ skipping 3072K ]
+  3072K ,,,,,,,, ,,,,,,,, ........ ........ ........ ........  4% 8,59M 22s
+  6144K                                                        4% 0,00 =0,3s
+
+2014-05-08 10:37:00 (5,72 MB/s) - Connection closed at byte 6291456. Giving up.
+
+download failed
+Oracle JDK 7 is NOT installed.
+dpkg: error processing package oracle-java7-installer (--configure):
+ subprocess installed post-installation script returned error exit status 1
+Errors were encountered while processing:
+ oracle-java7-installer
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+
+http://stackoverflow.com/questions/22541853/oracle-java-7-installation-in-ubuntu-e-sub-process-usr-bin-dpkg-returned-an-er
+
+http://askubuntu.com/questions/414885/oracle-jdk-7-is-not-installed-error
+
+sudo dpkg -P oracle-java7-installer
+
+- Oracle JDK 8: sudo apt-get install oracle-java8-installer
+
+Managing Java
+
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
+
+Setting the "JAVA_HOME" environment variable
+
+sudo nano /etc/environment
+JAVA_HOME="YOUR_PATH"
+source /etc/environment
+echo $JAVA_HOME
+
+==============================================
+PROGRAMS
+==============================================
+
+- Chrome
+google-chrome-stable_current_amd64.deb
+- STS
+jbeneito@jbeneito-Latitude-3540:~/Downloads$ sh ./spring-tool-suite-3.5.1.RELEASE-e4.3.2-linux-gtk-x86_64-installer.sh 
+- Kate
+- Sublime text 2
+sudo add-apt-repository ppa:webupd8team/sublime-text-2
+sudo apt-get update
+sudo apt-get --purge remove sublime-text*
+sudo apt-get install sublime-text
+- Keepass 2
+http://www.webupd8.org/2013/05/keepass-2-appindicator-extension-for.html
+sudo add-apt-repository ppa:dlech/keepass2-plugins
+sudo apt-get update
+sudo apt-get install keepass2-plugin-application-indicator
+
+sudo apt-get install keepass2-plugin-application-menu
+
+GIT
+sudo apt-get install git
+
+MAVEN
+http://maven.apache.org/download.cgi
+
+TOMCAT 7
+
+
+************
+* BAZINGA! *
+************
+
+Grub-Customizer made Windows 7 disappear from Gurb2
+
+http://ubuntuforums.org/showthread.php?t=1978611&page=2
+
+sudo apt-get purge grub-pc grub-common
+sudo apt-get install grub-pc grub-common
+sudo update-grub
+
+http://askubuntu.com/questions/361896/grub-customizer-made-windows-7-disappear-from-gurb2
+
+Finally solved with...
+http://askubuntu.com/questions/52963/how-do-i-set-windows-to-boot-as-the-default-in-the-boot-loader
+
+(And after reading https://help.ubuntu.com/community/Grub2 [but not https://help.ubuntu.com/community/Grub2/CustomMenus]. Also useful: http://askubuntu.com/questions/148095/how-do-i-set-the-grub-timeout-and-the-grub-default-boot-entry)
+
+sudo nano /etc/default/grub
+
+GRUB_DEFAULT="Windows 7 (loader) (on /dev/sda2)"
+
+sudo update-grub
+
+(See also https://bugs.launchpad.net/ubuntu/+source/grub2/+bug/1258597 https://bugs.launchpad.net/ubuntu/+source/grub2/+bug/1258597/comments/17)
+
+************
+* BAZINGA! *
+************
+
+http://askubuntu.com/questions/223501/ubuntu-gets-stuck-in-a-login-loop
+
+I've had the same problem, but it was my fault, because I modified /etc/environment to add some environment variables and I made a mistake.
+
+By following @SiddharthaRT's instructions, I was able to solve the problem.
+
+You know:
+/usr/bin/sudo /usr/bin/vi /etc/environment
+
+Press Ctrl+Alt+F3 and login into the shell.
+Now press Alt+-> until you reach the login screen again, and restart.
+
+==============================================
+MORE PROGRAMS
+==============================================
+
+ ------------
+| 12/05/2014 |
+ ------------
+
+· PostgreSQL
+
+http://www.postgresql.org/download/linux/ubuntu/
+https://www.digitalocean.com/community/articles/how-to-install-and-use-postgresql-on-ubuntu-14-04
+
+http://www.hackido.com/2014/04/setting-up-postgres-for-local.html
+
+sudo apt-get update
+sudo apt-get dist-upgrade
+sudo apt-get install postgresql postgresql-contrib pgadmin3
+
+psql --version
+psql (PostgreSQL) 9.3.4
+
+sudo -u postgres psql postgres
+
+# \password postgres
+
+Enter new password: 
+
+Type \q and then press ENTER to quit psql.
+
+
+    Start pgAdmin III.
+    Right-click (or double-click) the database server name and log in using the password that you specified for the 'postgres' super user.
+    Add a new login role called 'jbeneito':
+        Right-click Login Roles and select New Login Role.
+        Enter the role Role name: jbeneito
+        Enter a Password and enter it again to confirm it.
+        Click the Role privileges tab.
+        Select Can create database objects.
+        Select Can create roles.
+        Click OK to create the user.
+    Add a new database called 'test':
+        Right-click Databases and select New Database.
+        Enter the database Name: test
+        Select the Owner: jbeneito
+        Click OK to create the database.
+
+
+sudo -s -H -u postgres
+# Create the user:
+/opt/PostgreSQL/8.4/bin/createuser -S -d -r -P -E jbeneito
+# Create the TEST database:
+/opt/PostgreSQL/8.4/bin/createdb --owner jbeneito --encoding utf8 test
+exit
+
+SELECT version();
+
+http://jdbc.postgresql.org/download.html
+  JDBC41 Postgresql Driver, Version 9.3-1101
+  http://mvnrepository.com/artifact/org.postgresql/postgresql/9.3-1101-jdbc41
+
+· MySQL
+
+http://www.tocker.ca/2014/04/21/installing-mysql-5-6-on-ubuntu-14-04-trusty-tahr.html
+
+http://sharadchhetri.com/2014/05/07/install-mysql-server-5-6-ubuntu-14-04-lts-trusty-tahr/
+
+sudo apt-get install mysql-server-5.6
+mysql -uroot -p
+
+~$ mysql -u root -p
+Enter Password:
+
+SELECT user, host FROM mysql.user;
+SELECT USER(), CURRENT_USER();
+
+CREATE USER 'jbeneito'@'localhost' IDENTIFIED BY 'mypass';
+
+create database test;
+
+grant all privileges on test.* to 'jbeneito'@'localhost' ;
+
+FLUSH PRIVILEGES;
+
+SHOW VARIABLES LIKE 'version';
+
+http://dev.mysql.com/downloads/connector/j/
+  Connector/J 5.1.30
+  http://mvnrepository.com/artifact/mysql/mysql-connector-java/5.1.30
+
+
+ ------------
+| 13/05/2014 |
+ ------------
+
+ · MongoDB
+
+ > Install MongoDB
+
+ http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
+
+ 1. Import the public key used by the package management system.
+ 
+ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+ 
+ 2. Create a list file for MongoDB.¶
+
+echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+
+3. Reload local package database.¶
+
+sudo apt-get update
+
+4. Install the MongoDB packages.
+
+sudo apt-get install mongodb-org
+
+> Run MongoDB
+
+The MongoDB instance stores its data files in /var/lib/mongo and its log files in /var/log/mongo
+
+1. Start MongoDB.
+
+sudo /etc/init.d/mongod start
+
+2. Verify that MongoDB has started successfully
+
+See /var/log/mongodb/mongod.log.
+
+3. Stop MongoDB.
+
+sudo /etc/init.d/mongod stop
+
+4. Restart MongoDB.
+
+sudo /etc/init.d/mongod restart
+
+5. Begin using MongoDB.
+
+http://docs.mongodb.org/manual/tutorial/getting-started/
+
+************
+* BAZINGA! *
+************
+
+2014-08-04T10:53:04.646+0200 [initandlisten] ERROR: listen(): bind() failed errno:98 Address already in use for socket: 0.0.0.0:27017
+2014-08-04T10:53:04.646+0200 [initandlisten] ERROR:   addr already in use
+
+ ==========================================
+| SOLUTION!                                |
+| ps wuax | grep mongo                     |
+| :( NOPE sudo service mongodb stop        |
+| sudo /etc/init.d/mongod stop             |
+ ==========================================
+
+ See http://stackoverflow.com/a/17329802/825336
+
+
+· Redis
+
+https://library.linode.com/databases/redis/ubuntu-12.04-precise-pangolin
+
+1. Prepare System for Redis
+
+apt-get update
+apt-get upgrade
+
+2. Download and Install Redis
+
+apt-get install redis-server
+
+3. Redis Configuration
+
+cp /etc/redis/redis.conf /etc/redis/redis.conf.default
+
+Consider the following configuration (redis.conf):
+
+daemonize yes
+pidfile /var/run/redis.pid
+logfile /var/log/redis.log
+port 6379
+bind 127.0.0.1
+timeout 300
+loglevel notice
+## Default configuration options
+databases 16
+save 900 1
+save 300 10
+save 60 10000
+rdbcompression yes
+dbfilename dump.rdb
+appendonly no
+
+4. Running a Redis Datastore
+
+redis-server /etc/redis/redis.conf
+redis-cli
+
+ ------------
+| 16/05/2014 |
+ ------------
+
+ · Node.js
+
+ https://www.digitalocean.com/community/articles/how-to-install-node-js-on-an-ubuntu-14-04-server
+
+ sudo apt-get update
+ sudo apt-get install nodejs
+ sudo apt-get install npm
+
+ https://www.digitalocean.com/community/articles/how-to-use-npm-to-manage-node-js-packages-on-a-linux-server
+
+ Interesting
+
+ https://www.digitalocean.com/community/articles/how-to-install-wordpress-with-nginx-on-ubuntu-14-04
+ https://www.digitalocean.com/community/articles/how-to-use-npm-to-build-and-publish-node-js-packages-on-a-linux-server
+
+
+· Yeoman
+
+http://yeoman.io/gettingstarted.html
+
+> YO
+
+npm install -g yo
+
+************
+* BAZINGA! *
+************
+
+npm ERR! Please try running this command again as root/Administrator.
+
+sudo npm install -g yo
+
+************
+* BAZINGA! *
+************
+
+/usr/local/bin/yo -> /usr/local/lib/node_modules/yo/cli.js
+
+> yo@1.1.2 postinstall /usr/local/lib/node_modules/yo
+> node ./scripts/doctor
+
+sh: 1: node: not found
+npm WARN This failure might be due to the use of legacy binary "node"
+npm WARN For further explanations, please read
+/usr/share/doc/nodejs/README.Debian
+ 
+npm ERR! weird error 127
+npm ERR! not ok code 0
+
+:|
+
+https://github.com/Bauble/bauble.webapp/issues/34
+==> http://stackoverflow.com/questions/20881075/npm-install-g-yo-command-gives-err-yo1-1-0-postinstall-node-scripts-doct
+
+http://stackoverflow.com/a/20883916/825336
+
+(related to https://github.com/einaros/ws/issues/142#issuecomment-16805762)
+
+sudo ln -s /usr/bin/nodejs /usr/bin/node
+
+OR
+
+http://stackoverflow.com/a/21667861/825336
+	( cloning the repo and removing the postinstall check from package.json.)
+
+cd ~
+git clone https://github.com/yeoman/yo
+
+Edit the package.json..
+
+nano yo/package.json
+.. to remove these lines..
+
+"scripts": {
+    "test": "grunt",
+    "postinstall": "node ./scripts/doctor",
+    "postupdate": "node ./scripts/doctor"
+},
+Then, install it using npm..
+
+cd yo
+npm install -g
+
+cd ..
+rm -R yo/
+
+ ==========================================
+| SOLUTION!                                |
+| sudo ln -s /usr/bin/nodejs /usr/bin/node |
+ ==========================================
+
+Time to test YEOMAN
+
+sudo npm install -g generator-webapp
+mkdir ~/Documents/malsolo cd ~/Documents/malsolo
+yo webapp
+	(and choose bootstrap)
+
+ ------------
+| 23/05/2014 |
+ ------------
+
+· Dropbox
+
+Vía Ubuntu Software Center
+
+ ------------
+| 05/06/2014 |
+ ------------
+
+ · Vert.x
+
+http://vertx.io/install.html
+
+sudo nano /etc/environment
+PATH="YOUR_PATH:VERT.X's PATH"
+source /etc/environment
+echo $PATH
+
+$ vertx version
+
+ ------------
+| 16/06/2014 |
+ ------------
+
+ · Hadoop
+
+ Desde http://www.apache.org/dyn/closer.cgi/hadoop/common/, se escoge un mirror para bajarse la versión actual: http://[mirror]/apache/hadoop/common/current/
+
+ En este caso, la 2.4.0: hadoop-2.4.0.tar.gz
+
+ Ver http://www.adictosaltrabajo.com/tutoriales/tutoriales.php?pagina=hadoop_first_steps
+
+ En vez de [sudo] tar xvzf hadoop-2.2.0.tar.gz, lo descomprimo desde Nautilus y listo.
+
+ Además, ya tengo un JAVA_HOME
+
+ $ echo $JAVA_HOME
+/usr/lib/jvm/java-7-openjdk-amd64
+
+ export HADOOP_HOME=/home/jbeneito/Applications/hadoop-2.4.0
+ export PATH=$PATH:$HADOOP_HOME/bin
+ export PATH=$PATH:$HADOOP_HOME/sbin
+
+$ hadoop version
+Hadoop 2.4.0
+Subversion http://svn.apache.org/repos/asf/hadoop/common -r 1583262
+Compiled by jenkins on 2014-03-31T08:29Z
+Compiled with protoc 2.5.0
+From source with checksum 375b2832a6641759c6eaf6e3e998147
+This command was run using /home/jbeneito/Applications/hadoop-2.4.0/share/hadoop/common/hadoop-common-2.4.0.jar
+
+Ook! :D
+
+ ------------
+| 23/06/2014 |
+ ------------
+
+Setting up apt-get to use a http-proxy
+
+https://help.ubuntu.com/community/AptGet/Howto#Setting_up_apt-get_to_use_a_http-proxy
+
+Temporary proxy session
+
+export http_proxy=http://yourproxyaddress:proxyport
+export https_proxy=$http_proxy
+
+sudo -l
+
+sudo visudo
+
+Defaults env_keep = "http_proxy https_proxy"
+
+From:
+http://nknu.net/ubuntu-14-04-proxy-authentication-config/
+https://www.digitalocean.com/community/tutorials/how-to-edit-the-sudoers-file-on-ubuntu-and-centos
+http://www.garron.me/en/linux/visudo-command-sudoers-file-sudo-default-editor.html
+
+ ------------
+| 23/06/2014 |
+ ------------
+
+VMWare View Client for Linux
+
+
+"You must use the View Client for Linux to access this Connection Server
+
+To connect, start the View Client and enter https://view.eci.geci as the server URL."
+
+Useful: http://www.wilmu.edu/onlinelearning/documents/HowtoinstallVMwareViewClientonUbuntu.pdf
+
+
+http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2021847
+
+1. Open the /etc/apt/sources.list file using a text editor.
+2. Uncomment these lines:
+
+    deb http://archive.canonical.com/ubuntu precise partner
+    deb-src http://archive.canonical.com/ubuntu precise partner
+
+(Also via Ubunti Software Center)
+
+3. Run these commands in the terminal:
+
+    sudo apt-get update 
+    sudo apt-get install vmware-view-client
+
+
+ ------------
+| 26/06/2014 |
+ ------------
+
+ANT
+
+sudo apt-get install ant
+
+ ------------
+| 01/07/2014 |
+ ------------
+
+SPLUNK 
+
+Double click on .deb ==> Ubuntu Software Center ==> Install
+
+See /opt/splunk
+
+Details: http://docs.splunk.com/Documentation/Splunk/6.1.1/Installation/InstallonLinux
+
+What gets installed
+Splunk package status:
+
+dpkg --status splunk
+List all packages:
+
+dpkg --list
+
+Start Splunk
+Splunk Enterprise can run as any user on the local system. If you run it as a non-root user, make sure that it has the appropriate permissions to read the inputs that you specify. Refer to the instructions for running Splunk Enterprise as a non-root user for more information.
+
+To start Splunk Enterprise from the command line interface, run the following command from $SPLUNK_HOME/bin directory (where $SPLUNK_HOME is the directory into which you installed Splunk):
+
+ ./splunk start
+By convention, this document uses:
+
+$SPLUNK_HOME to identify the path to your Splunk Enterprise installation.
+$SPLUNK_HOME/bin/ to indicate the location of the command line interface.
+Startup options
+The first time you start Splunk Enterprise after a new installation, you must accept the license agreement. To start Splunk Enterprise and accept the license in one step:
+
+ $SPLUNK_HOME/bin/splunk start --accept-license
+Note: There are two dashes before the accept-license option.
+
+Launch Splunk Web and log in
+After you start Splunk Enterprise and accept the license agreement,
+
+1. In a browser window, access Splunk Web at http://<hostname>:port.
+
+hostname is the host machine.
+port is the port you specified during the installation (the default port is 8000).
+""Note:"" Navigate to HTTP the first time you access Splunk.
+
+2. Splunk Web prompts you for login information (default, username admin and password changeme) before it launches. If you switch to Splunk Free, you will bypass this logon page in future sessions.
+
+NEXT
+
+http://docs.splunk.com/Documentation/Splunk/6.1.1/SearchTutorial/StartSplunk
+
+Start Splunk Enterprise on Linux
+After you install Splunk Enterprise, use the Splunk CLI to start it. Simplify the CLI access by adding a SPLUNK_HOME environment variable for the top level installation directory and adding $SPLUNK_HOME/bin to your shell's path.
+
+If you installed in the default location for Linux, your export path should look like this:
+
+# export SPLUNK_HOME=/opt/splunk
+# export PATH=$SPLUNK_HOME/bin:$PATH
+For information on how to access the CLI, see "About the CLI" in the Admin manual.
+
+To start Splunk:
+
+1. Type:
+
+$SPLUNK_HOME/bin/splunk start
+Accept the Splunk Enterprise License
+After you run the start command, Splunk Enterprise displays the license agreement and prompts you to accept the license before the startup sequence continues.
+
+If you have problems starting Splunk Enterprise, see "Start Splunk Enterprise for the first time" in the Installation manual.
+
+Other commands you might need
+If you need to stop, restart, or check the status of your Splunk Enterprise server, use these CLI commands:
+
+$ splunk stop
+$ splunk restart
+$ splunk status
+http://docs.splunk.com/Documentation/Splunk/latest/SearchTutorial/InstallSplunk
+
+Oops!
+
+http://answers.splunk.com/answers/27400/splunk-wont-start-with-error-warning-cannot-create-optsplunketclicensesenterprise
+
+After: http://docs.splunk.com/Documentation/Splunk/6.1.1/Installation/StartSplunkforthefirsttime
+
+Try
+
+sudo $SPLUNK_HOME/bin/splunk start --answer-yes --no-prompt --accept-license
+
+ ------------
+| 01/07/2014 |
+ ------------
+
+ZULU 6, 7, 8
+
+Azul Systems, Inc. OpenJDK implmentation
+
+Double click on .deb and accept the bd packages 
+
+ ------------
+| 10/10/2014 |
+ ------------
+
+IBM developer kits: http://www.ibm.com/developerworks/java/jdk/
+
+http://www.ibm.com/developerworks/java/jdk/linux/tested.html
+
+$ sudo update-alternatives --config java
+[sudo] password for jbeneito: 
+There are 7 choices for the alternative java (providing /usr/bin/java).
+
+  Selection    Path                                            Priority   Status
+------------------------------------------------------------
+  0            /usr/lib/jvm/java-8-oracle/jre/bin/java          180104    auto mode
+  1            /usr/lib/jvm/java-6-oracle/jre/bin/java          1072      manual mode
+  2            /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java   1071      manual mode
+  3            /usr/lib/jvm/java-7-oracle/jre/bin/java          180103    manual mode
+* 4            /usr/lib/jvm/java-8-oracle/jre/bin/java          180104    manual mode
+  5            /usr/lib/jvm/zulu-6-amd64/jre/bin/java           160400    manual mode
+  6            /usr/lib/jvm/zulu-7-amd64/jre/bin/java           170400    manual mode
+  7            /usr/lib/jvm/zulu-8-amd64/jre/bin/java           180100    manual mode
+
+Press enter to keep the current choice[*], or type selection number: 
+$
+
+$ mvn -version
+Apache Maven 3.2.1 (ea8b2b07643dbb1b84b6d16e1f08391b666bc1e9; 2014-02-14T18:37:52+01:00)
+Maven home: /home/jbeneito/Applications/apache-maven-3.2.1
+Java version: 1.8.0_20, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-8-oracle/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "3.13.0-35-generic", arch: "amd64", family: "unix"
+$
+
+$ echo $JAVA_HOME
+/usr/lib/jvm/java-8-oracle
+$
+
+ $ more /etc/environment
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/jbeneito/Applic
+ations/apache-maven-3.2.1/bin:/home/jbeneito/Applications/vert.x-2.1.1/bin:/home/jbeneito/Applications/hadoop-2.4.0/
+bin:/home/jbeneito/Applications/hadoop-2.4.0/sbin"
+JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+MAVEN_OPTS="-Xms256m -Xmx512m"
+$
+
+chmod a+x ibm-java-x86_64-sdk-7.1-1.1.bin 
+jbeneito@jbeneito-Latitude-3540:~/Downloads$ ./ibm-java-x86_64-sdk-7.1-1.1.bin 
+Preparing to install...
+Extracting the JRE from the installer archive...
+Unpacking the JRE...
+Extracting the installation resources from the installer archive...
+Configuring the installer for this system's environment...
+strings: '/lib/libc.so.6': No such file
+
+Launching installer...
+
+Bazinga! retry with sudo and then...
+
+sudo ./ibm-java-x86_64-sdk-7.1-1.1.bin 
+Preparing to install...
+Extracting the JRE from the installer archive...
+Unpacking the JRE...
+Extracting the installation resources from the installer archive...
+Configuring the installer for this system's environment...
+strings: '/lib/libc.so.6': No such file
+
+Launching installer...
+
+
+Graphical installers are not supported by the VM. The console mode will be used instead...
+
+===============================================================================
+Choose Locale...
+----------------
+
+    1- Bahasa Indonesia
+    2- Català
+    3- Deutsch
+  ->4- English
+    5- Español
+    6- Français
+    7- Italiano
+    8- Português  (Brasil)
+
+CHOOSE LOCALE BY NUMBER: 
+
+4
+===============================================================================
+IBM 64-bit SDK for Linux, Java Technology Edition, Version 7.1(created with InstallAnywhere)
+--------------------------------------------------------------------------------------------
+
+Preparing CONSOLE Mode Installation...
+
+
+
+
+===============================================================================
+License Agreement
+-----------------
+
+Installation and Use of IBM 64-bit SDK for Linux, Java Technology Edition, 
+Version 7.1 Requires Acceptance of the Following License Agreement:
+
+International License Agreement for Non-Warranted Programs
+
+Part 1 - General Terms
+
+BY DOWNLOADING, INSTALLING, COPYING, ACCESSING, CLICKING ON AN "ACCEPT" BUTTON,
+OR OTHERWISE USING THE PROGRAM, LICENSEE AGREES TO THE TERMS OF THIS AGREEMENT.
+IF YOU ARE ACCEPTING THESE TERMS ON BEHALF OF LICENSEE, YOU REPRESENT AND 
+WARRANT THAT YOU HAVE FULL AUTHORITY TO BIND LICENSEE TO THESE TERMS. IF YOU DO
+NOT AGREE TO THESE TERMS,
+
+* DO NOT DOWNLOAD, INSTALL, COPY, ACCESS, CLICK ON AN "ACCEPT" BUTTON, OR USE 
+THE PROGRAM; AND
+
+* PROMPTLY RETURN THE UNUSED MEDIA AND DOCUMENTATION TO THE PARTY FROM WHOM IT 
+WAS OBTAINED FOR A REFUND OF THE AMOUNT PAID. IF THE PROGRAM WAS DOWNLOADED, 
+DESTROY ALL COPIES OF THE PROGRAM.
+
+1. Definitions
+
+"Authorized Use" - the specified level at which Licensee is authorized to 
+execute or run the Program. That level may be measured by number of users, 
+millions of service units ("MSUs"), Processor Value Units ("PVUs"), or other 
+level of use specified by IBM.
+
+PRESS <ENTER> TO CONTINUE: (More than 50 times)
+
+DO YOU ACCEPT THE TERMS OF THIS LICENSE AGREEMENT? (Y/N): 
+
+===============================================================================
+Introduction
+------------
+
+InstallAnywhere will guide you through the installation of IBM 64-bit SDK for 
+Linux, Java Technology Edition, Version 7.1.
+
+It is strongly recommended that you quit all programs before continuing with 
+this installation.
+
+Respond to each prompt to proceed to the next step in the installation.  If you
+want to change something on a previous step, type 'back'.
+
+You may cancel this installation at any time by typing 'quit'.
+
+PRESS <ENTER> TO CONTINUE:
+
+===============================================================================
+Choose Install Folder
+---------------------
+
+Where would you like to install?
+
+  Default Install Folder: /opt/ibm/java-x86_64-71
+
+ENTER AN ABSOLUTE PATH, OR PRESS <ENTER> TO ACCEPT THE DEFAULT
+      : 
+
+===============================================================================
+Pre-Installation Summary
+------------------------
+
+Please Review the Following Before Continuing:
+
+Product Name:
+    IBM 64-bit SDK for Linux, Java Technology Edition, Version 7.1
+
+Install Folder:
+    /opt/ibm/java-x86_64-71
+
+Disk Space Information (for Installation Target): 
+    Required:  210,544,525 bytes
+    Available: 41,212,141,568 bytes
+
+PRESS <ENTER> TO CONTINUE: 
+
+===============================================================================
+Installing...
+-------------
+
+ [==================|==================|==================|==================]
+ [------------------|------------------|------------------|------------------]
+
+
+
+===============================================================================
+Installation Complete
+---------------------
+
+Congratulations. IBM 64-bit SDK for Linux, Java Technology Edition, Version 7.1
+has been successfully installed to:
+
+   /opt/ibm/java-x86_64-71
+
+PRESS <ENTER> TO EXIT THE INSTALLER: 
+
+$ /opt/ibm/java-x86_64-71/bin/java -version
+java version "1.7.0"
+Java(TM) SE Runtime Environment (build pxa6470_27sr1fp1-20140708_01(SR1 FP1))
+IBM J9 VM (build 2.7, JRE 1.7.0 Linux amd64-64 Compressed References 20140707_205525 (JIT enabled, AOT enabled)
+J9VM - R27_Java727_SR1_20140707_1408_B205525
+JIT  - tr.r13.java_20140410_61421.07
+GC   - R27_Java727_SR1_20140707_1408_B205525_CMPRSS
+J9CL - 20140707_205525)
+JCL - 20140707_01 based on Oracle 7u65-b16
+$
+
+ ------------
+| 08/01/2015 |
+ ------------
+
+CASSANDRA
+
+http://www.datastax.com/documentation/cassandra/2.0/cassandra/install/installTarball_t.html
+
+(Rather than http://www.datastax.com/documentation/cassandra/2.0/cassandra/install/installDeb_t.html)
+
+You can reach this page from http://planetcassandra.org/cassandra/
+
+Download the DataStax Community:
+
+$ curl -L http://downloads.datastax.com/community/dsc-2.0.tar.gz | tar xz
+
+(See latest version at http://planetcassandra.org/cassandra/)
+
+Go to the install directory:
+$ cd dsc-cassandra-2.0.x
+
+For the time being: v2.0.11 (Stable & Recommended)
+
+http://planetcassandra.org/cassandra/?dlink=http://downloads.datastax.com/community/dsc-cassandra-2.0.11-bin.tar.gz
+
+cd ~/Applications/dsc-cassandra-2.0.11
+
+· First:  sudo ~/Applications/dsc-cassandra-2.0.11/bin/cassandra -f
+· Second:  ~/Applications/dsc-cassandra-2.0.11/bin/cqlsh
+
+Better with sudo due to:
+
+"Cassandra Users of recent Linux distributions and Mac OS X Snow Leopard should be able to start up Cassandra simply by untarring and invoking bin/cassandra -f. Since Cassandra 2.1, the tar.gz download has shipped with the log and data directories defaulting to the Cassandra directory. Versions prior defaulted to /var/log/cassandra and /var/lib/cassandra/. Due to this it is necessary to either start Cassandra with root privileges or change the conf/cassandra.yaml to use a directory owned by the current user. Snow Leopard ships with Java 1.6.0 and does not require changing the JAVA_HOME environment variable or adding any directory to your PATH. On Linux just make sure you have a working Java JDK package installed such as the openjdk-6-jdk on Ubuntu Lucid Lynx."
+
+More:
+~/Applications/dsc-cassandra-2.0.11/bin/nodetool status
+Datacenter: datacenter1
+=======================
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+--  Address    Load       Tokens  Owns (effective)  Host ID                               Rack
+UN  127.0.0.1  60.45 KB   256     100.0%            b4baf7e7-307b-4037-9558-e42275d16337  rack1
+
+$ uname -a
+Linux jbeneito-Latitude-3540 3.13.0-43-generic #72-Ubuntu SMP Mon Dec 8 19:35:06 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+
+$ vmstat
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 3  0    604 601572  44076 1849944    0    0    65   125  574  662 17  3 78  2  0
+
+
+SUMMARY: see http://wiki.apache.org/cassandra/GettingStarted
+
+See also: http://player.oreilly.com/videos/9781783553051?toc_id=197539
+
+See also: http://planetcassandra.org/what-is-apache-cassandra/
+
+> MORE: Cassandra driver
+
+From http://cassandra.apache.org/download/ 
+"Third Party Distributions (not endorsed by Apache)" --> 
+    --> DataStax Community -->
+    --> http://planetcassandra.org/cassandra/ ==> 
+    "Step 3: Connecting a Client Driver" Java   
+DataStax Java Client Driver for Apache Cassandra --> 
+
+https://github.com/datastax/java-driver
+
+Source and instructions
+
+Maven
+
+The last release of the driver is available on Maven Central. You can install it in your application using the following Maven dependency:
+
+<dependency>
+  <groupId>com.datastax.cassandra</groupId>
+  <artifactId>cassandra-driver-core</artifactId>
+  <version>2.1.4</version>
+</dependency>
+Note that the object mapper is published as a separate artifact:
+
+<dependency>
+  <groupId>com.datastax.cassandra</groupId>
+  <artifactId>cassandra-driver-mapping</artifactId>
+  <version>2.1.4</version>
+</dependency>
+
+
+ -----
+| GIT |
+ -----
+git log --since="1 days ago" --pretty=format:"" --name-only | grep "[^\s]" | sort | uniq -c | sort -nr | head -10
+
+
+ ------------
+| 23/02/2015 |
+ ------------
+
+ · Hadoop 2.6.0
+
+ http://hadoop.apache.org/ == Download Hadoop ==> http://hadoop.apache.org/#Download+Hadoop ==  releases ==> http://hadoop.apache.org/releases.html == Download ==> http://hadoop.apache.org/releases.html#Download == Download a release now! ==> http://www.apache.org/dyn/closer.cgi/hadoop/common/ == mirror ==> http://ftp.cixug.es/apache/hadoop/common/ == hadoop-2.6.0/  ==> http://ftp.cixug.es/apache/hadoop/common/hadoop-2.6.0/
+
+ Desde http://www.apache.org/dyn/closer.cgi/hadoop/common/, se escoge un mirror para bajarse la versión actual: http://[mirror]/apache/hadoop/common/current/
+
+$ tar xzf hadoop-2.6.0.tar.gz
+$ mv hadoop-2.6.0 ~/Applications
+ 
+ JAVA_HOME
+
+$ sudo update-alternatives --config java
+[sudo] password for Javier: 
+There are 7 choices for the alternative java (providing /usr/bin/java).
+
+  Selection    Path                                            Priority   Status
+------------------------------------------------------------
+  0            /usr/lib/jvm/java-8-oracle/jre/bin/java          180108    auto mode
+  1            /usr/lib/jvm/java-6-oracle/jre/bin/java          1072      manual mode
+  2            /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java   1071      manual mode
+  3            /usr/lib/jvm/java-7-oracle/jre/bin/java          180107    manual mode
+* 4            /usr/lib/jvm/java-8-oracle/jre/bin/java          180108    manual mode
+  5            /usr/lib/jvm/zulu-6-amd64/jre/bin/java           160400    manual mode
+  6            /usr/lib/jvm/zulu-7-amd64/jre/bin/java           170400    manual mode
+  7            /usr/lib/jvm/zulu-8-amd64/jre/bin/java           180100    manual mode
+
+Press enter to keep the current choice[*], or type selection number: 
+jbeneito@jbeneito-Latitude-3540:~/Documents/git$ 
+
+
+$ sudo nano /etc/environment
+JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+$ source /etc/environment
+$ echo $JAVA_HOME
+/usr/lib/jvm/java-8-oracle
+
+$ mvn -version
+Apache Maven 3.2.1 (ea8b2b07643dbb1b84b6d16e1f08391b666bc1e9; 2014-02-14T18:37:52+01:00)
+Maven home: /home/jbeneito/Applications/apache-maven-3.2.1
+Java version: 1.8.0_31, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-8-oracle/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "3.13.0-45-generic", arch: "amd64", family: "unix"
+$ 
+
+$ sudo nano /etc/environment
+PATH=".../Applications/hadoop-2.6.0/bin:.../Applications/hadoop-2.6.0/sbin"
+$ source /etc/environment
+
+$ hadoop version
+Hadoop 2.6.0
+Subversion https://git-wip-us.apache.org/repos/asf/hadoop.git -r e3496499ecb8d220fba99dc5ed4c99c8f9e33bb1
+Compiled by jenkins on 2014-11-13T21:10Z
+Compiled with protoc 2.5.0
+From source with checksum 18e43357c8f927c0695f1e9522859d6a
+This command was run using ~/Applications/hadoop-2.6.0/share/hadoop/common/hadoop-common-2.6.0.jar
+$ 
+
+Ook! :D
+
+
+ ------------
+| 03/03/2015 |
+ ------------
+
+ · Ruby
+
+ https://www.ruby-lang.org/en/documentation/installation/#apt
+
+ But I'd rather the Ubuntu suggestion:
+
+$ ruby
+The program 'ruby' can be found in the following packages:
+ * ruby
+ * ruby1.8
+Try: sudo apt-get install <selected package>
+
+$ sudo apt-get install ruby
+[sudo] password for jbeneito: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  kde-l10n-engb libreoffice-l10n-en-gb libreoffice-l10n-es
+  linux-headers-3.13.0-35 linux-headers-3.13.0-35-generic
+  linux-image-3.13.0-35-generic linux-image-extra-3.13.0-35-generic
+  python-appindicator python-psutil
+Use 'apt-get autoremove' to remove them.
+The following extra packages will be installed:
+  libruby1.9.1 libyaml-0-2 ruby1.9.1
+Suggested packages:
+  ri ruby-dev ruby1.9.1-examples ri1.9.1 graphviz ruby1.9.1-dev ruby-switch
+The following NEW packages will be installed:
+  libruby1.9.1 libyaml-0-2 ruby ruby1.9.1
+0 upgraded, 4 newly installed, 0 to remove and 18 not upgraded.
+Need to get 2.734 kB of archives.
+After this operation, 12,9 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://es.archive.ubuntu.com/ubuntu/ trusty-updates/main libyaml-0-2 amd64 0.1.4-3ubuntu3.1 [48,1 kB]
+Get:2 http://es.archive.ubuntu.com/ubuntu/ trusty/main ruby all 1:1.9.3.4 [5.334 B]
+Get:3 http://es.archive.ubuntu.com/ubuntu/ trusty-updates/main ruby1.9.1 amd64 1.9.3.484-2ubuntu1.2 [35,6 kB]
+Get:4 http://es.archive.ubuntu.com/ubuntu/ trusty-updates/main libruby1.9.1 amd64 1.9.3.484-2ubuntu1.2 [2.645 kB]
+Fetched 2.734 kB in 4s (675 kB/s)         
+Selecting previously unselected package libyaml-0-2:amd64.
+(Reading database ... 594303 files and directories currently installed.)
+Preparing to unpack .../libyaml-0-2_0.1.4-3ubuntu3.1_amd64.deb ...
+Unpacking libyaml-0-2:amd64 (0.1.4-3ubuntu3.1) ...
+Selecting previously unselected package ruby.
+Preparing to unpack .../ruby_1%3a1.9.3.4_all.deb ...
+Unpacking ruby (1:1.9.3.4) ...
+Selecting previously unselected package ruby1.9.1.
+Preparing to unpack .../ruby1.9.1_1.9.3.484-2ubuntu1.2_amd64.deb ...
+Unpacking ruby1.9.1 (1.9.3.484-2ubuntu1.2) ...
+Selecting previously unselected package libruby1.9.1.
+Preparing to unpack .../libruby1.9.1_1.9.3.484-2ubuntu1.2_amd64.deb ...
+Unpacking libruby1.9.1 (1.9.3.484-2ubuntu1.2) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Setting up libyaml-0-2:amd64 (0.1.4-3ubuntu3.1) ...
+Setting up ruby (1:1.9.3.4) ...
+Setting up ruby1.9.1 (1.9.3.484-2ubuntu1.2) ...
+Setting up libruby1.9.1 (1.9.3.484-2ubuntu1.2) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.6) ...
+
+Then try https://www.ruby-lang.org/en/documentation/quickstart/
+
+"Open up IRB (which stands for Interactive Ruby)."
+
+$ irb
+irb(main):001:0> "Hello World"
+=> "Hello World"
+irb(main):002:0> puts "Hello World"
+Hello World
+=> nil
+irb(main):003:0> 3+2
+=> 5
+irb(main):004:0> 3*2
+=> 6
+irb(main):005:0> a = 3 ** 2
+=> 9
+irb(main):006:0> b = 4 ** 2
+=> 16
+irb(main):007:0> Math.sqrt(a+b)
+=> 5.0
+irb(main):008:0> 
+[Ctrl-D to exit]
+[exit to exit]
+
+ ------------
+| 11/03/2016 |
+ ------------
+
+· How to Install OpenJDK 8 in Ubuntu 14.04 & 12.04 LTS
+
+http://ubuntuhandbook.org/index.php/2015/01/install-openjdk-8-ubuntu-14-04-12-04-lts/
+
+OpenJDK Java 8 has been made into official Ubuntu repositories for 14.10 Utopic and higher. For Ubuntu 14.04, Ubuntu 12.04, and Linux Mint 17 users here’s how to install it from PPA.
+
+OpenJDK 8 was released in March 2014. It’s available in Ubuntu Software Center for Ubuntu 14.10 and Ubuntu 15.04. Someone has reported in launchpad asking for packaging openjdk-8 in Ubuntu 14.04, but no luck so far.
+
+As a workaround, you can install OpenJDK 8 from a PPA repository:
+
+1. Open terminal from the Dash or by pressing Ctrl+Alt+T. When it opens, run the command below to add PPA:
+
+sudo add-apt-repository ppa:openjdk-r/PPA
+
+ype in user password when it asks and hit Enter to continue.
+
+2. After that, update system package cache and install OpenJDK 8:
+
+sudo apt-get update 
+
+sudo apt-get install openjdk-8-jdk
+3. If you have more than one Java versions installed on your system. Run below command set the default Java:
+
+sudo update-alternatives --config java
+Type in a number to select a Java version.
+
+And set default Java Compiler by running:
+
+sudo update-alternatives --config javac
+4. Finally check out current Java version by running:
+
+java -version
+It outputs something like this:
+
+openjdk version "1.8.0_01-internal"
+OpenJDK Runtime Environment (build 1.8.0_01-internal-b04)
+OpenJDK 64-Bit Server VM (build 25.40-b08, mixed mode)
+
+Note:just in case, http://www.webupd8.org/2014/03/fix-cannot-add-ppa-please-check-that.html
+

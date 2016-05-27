@@ -1,0 +1,44 @@
+RTC
+
+https://jazz.net/downloads/rational-team-concert/
+
+https://hub.jazz.net/tutorials/clients/#installing_eclipse_and_the_rational_team_concert_plugin
+
+http://pic.dhe.ibm.com/infocenter/clmhelp/v4r0/index.jsp?topic=%2Fcom.ibm.jazz.install.doc%2Ftopics%2Ft_client_installation_p2.html
+
+https://jazz.net/forum/questions/106391/where-to-get-rtc-eclipse-plugin
+
+Procedure
+
+	0. Configure the proxy if any. :|
+
+    1. Download and install a supported version of Eclipse from http://download.eclipse.org/eclipse/downloads/ or one of the Eclipse mirror sites.
+    
+    2. Extract the .zip file to a directory. For example, C:\dev\eclipse-rtc.
+    
+    3. Double-click the eclipse.exe executable file in C:\dev\eclipse-rtc\eclipse to open it.
+        You need a v1.6 Java Virtual Machine (JVM) in your path for this to work. If needed, you can add the JVM path to the C:\dev\eclipse-rtc\eclipse\eclipse.ini file by adding the following two lines to the file just before vmargs:
+
+        -vm
+        C:\path\to\java.exe
+
+    
+    4. Download the p2 Install Repository from the Rational Team Concert download page.
+    
+    5. Start Eclipse and select Help > Install New Software.
+    
+    6. In the Available Software window, click Add. In the Add Repository window, click Archive and navigate to the p2 Install Repository .zip file that you downloaded in step 4. Click OK.
+    
+    7. In the next window, ensure that Group items by category is selected. Select Rational Team Concert Client (extend an Eclipse installation).
+    
+    8. Click Next, then Next again in the Install Details window.
+    
+    9. After you accept the terms of the license agreement, click Finish. A security warning window opens during the installation because the Rational Team Concert client bundles and features are not signed. Click OK to complete the installation. Click Restart Now when prompted to restart at the end of the installation.
+    
+    10. To install language packs for the client, download a Client for Eclipse IDE National Language Support Pack (NLS pack) from the Rational Team Concert download page.
+    Tip: NLS Pack 1 contains translations in Brazilian Portuguese, French, German, Italian, Japanese, Korean, Simplified Chinese, Traditional Chinese, and Spanish. NLS pack 2 contains translations in Czech, Hungarian, Polish, and Russian.
+    Select File > Exit to stop the client.
+    Extract the language pack .zip file to a folder named dropins under the eclipse directory created in step 2. For example, C:\dev\eclipse-rtc\eclipse\dropins.
+    If the system locale for your operating system is already in the language you want to launch Eclipse in, all you have to do is to launch Eclipse normally and the language packs will be loaded. If the system locale is in English and you want to launch Eclipse in another language, you must launch Eclipse with the -nl command line argument, for example:
+
+    eclipse.exe -nl fr

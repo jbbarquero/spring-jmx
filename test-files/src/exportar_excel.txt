@@ -1,0 +1,6 @@
+I22 - Volcar sólo las cerradas y rechazadas
+I6 - Siempre informado. En blanco para corregir
+I7 tipo de tarea y tipo de proceso
+I8  - Volcar sólo las cerradas y rechazadas
+I9 columna listado de hijas
+

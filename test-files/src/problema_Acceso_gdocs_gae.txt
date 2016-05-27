@@ -1,0 +1,78 @@
+mvn appengine:devserver -P local -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.test.skip=true
+
+UserSessionBean {"userId":"josemanuel.gomez.garrido.contractor@dev.bbva.com","nickname":"JOSE MANUEL","firstName":"JOSE MANUEL","lastName":"GOMEZ GARRIDO","email":"josemanuel.gomez.garrido.contractor@dev.bbva.com","domain":"dev.bbva.com","locale":"en_US","locales":["en_US","en","es"],"timeZone":"Europe/Madrid","administrator":false,"defLanguage":"en","functionalCode":"IHV","country":"ESPAÑA","countryCode":"ESP","companyCode":"0001","ous":[{},{},{},{},{},{},{},{},{},{},{}],"employeeId":"XE41249","companyName":"ACIONES Y TRATAMIENTO DE","company":"APLICACIONES Y TRATAMIENTO DE","funtionalChargeDescription":"ANAQUEL - PROGRAMADOR","sIsEmployee":"N","sFirstSurname":"GOMEZ","hasPhoto":false,"workplaceDescription":"ED.ISLA CHAMART(PERS","workplaceCode":"00012259","workplaceLatitude":"40.4878916","workplaceLongitude":"-3.6694757","costCenterCode":"4670","costCenterDescription":"SISTEMAS COLABORATIVOS","phoneNumber":"","mobilePhoneNumber":"","coorporatePhoneNumber":"","coorporateMobilePhoneNumber":"","department":"SISTEMAS COLABORATIVOS","userPreferences":{"user":"josemanuel.gomez.garrido.contractor@dev.bbva.com","theme":"original","insertDate":1.408704439473E12,"updateDate":1.408704439474E12},"domainPreferences":{"domain":"dev.bbva.com","skin":"dev.bbva.com","insertDate":1.372766946506E12,"updateDate":1.372766946506E12},"floorDescription":"AV. MANOTERAS  20 - PLANTA 5","roles":[]}
+
+
+[00030019, 00003053, 00000063, 00005513, 00030021]
+[00000063, 00003053, 00030019, 00005513, 00030021, 00030021, 00030021, 00030021, 00030021, 00030021, 00030021, null, null, null, null]
+
+00000063, 00003053, 
+
+Usuario: bbva-hoggtool@dev.bbva.com
+Documento: 18ppSL1Nc7RYVsLJx2hRtx4RROk2IqUQeBcMiTPLHgm4
+
+GDocs.url = http://dev-gdocs-sp-bbva.appspot.com
+GDocs.user = bbva-hoggtool@dev.bbva.com
+
+http://dev-gdocs-sp-bbva.appspot.com/s/documents/18ppSL1Nc7RYVsLJx2hRtx4RROk2IqUQeBcMiTPLHgm4/permissions
+
+bbva-hoggtool@dev.bbva.com
+
+USER ==> Caronte key=bbva-hoggtool@dev.bbva.com_token ==> key=OAuthUserToken("bbva-hoggtool@dev.bbva.com_token") ==> 
+
+<Entity [OAuthUserToken("bbva-hoggtool@dev.bbva.com_token")]:
+	InsertDate = 1416322745811
+	Token = ya29.wgArlbaQyzhdmDi5Sna6GaRsu3kdgwkI4ignkZTGFASw51Y34RtKyjJUaJbNv2YVSVSVHOPWVkFH2mZYSDVlBOkLDK2Z0TdrIoYQsNJRIbwMdtLABIji7UhO
+>
+
+Puedo meter en memecache.put("bbva-hoggtool@dev.bbva.com_token", new UserToken("ya29.wgArlbaQyzhdmDi5Sna6GaRsu3kdgwkI4ignkZTGFASw51Y34RtKyjJUaJbNv2YVSVSVHOPWVkFH2mZYSDVlBOkLDK2Z0TdrIoYQsNJRIbwMdtLABIji7UhO", 1416322745811))
+
+{X-BBVA-Env=Development, X-BBVA-AppId=dev-bbva-knowledgemap-sp}
+
+400 Bad Request
+540
+
+INFO: Fetch invoke #0
+com.google.api.client.googleapis.json.GoogleJsonResponseException: 400 Bad Request
+	at com.google.api.client.googleapis.json.GoogleJsonResponseException.from(GoogleJsonResponseException.java:145)
+	at com.google.api.client.googleapis.services.json.AbstractGoogleJsonClientRequest.newExceptionOnError(AbstractGoogleJsonClientRequest.java:113)
+	at com.google.api.client.googleapis.services.json.AbstractGoogleJsonClientRequest.newExceptionOnError(AbstractGoogleJsonClientRequest.java:40)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest$1.interceptResponse(AbstractGoogleClientRequest.java:312)
+	at com.google.api.client.http.HttpRequest.execute(HttpRequest.java:1049)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.executeUnparsed(AbstractGoogleClientRequest.java:410)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.executeUnparsed(AbstractGoogleClientRequest.java:343)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.execute(AbstractGoogleClientRequest.java:460)
+	at com.fga.utils.OAuthUtils.getOAuth2TokenInfo(OAuthUtils.java:40)
+	at com.fga.oauth.client.OAuthClient.setOAuthV2Credentials(OAuthClient.java:671)
+	at com.fga.helpers.impl.GenericOAUthHelper.createOAuthClient(GenericOAUthHelper.java:120)
+	at com.fga.helpers.impl.GenericOAUthHelper.invokeUrlResponse(GenericOAUthHelper.java:91)
+	at com.fga.helpers.GenericHelper.retrieveResponse(GenericHelper.java:88)
+	at com.bbva.frcs.OAuthCommunicationHandler.doGet(OAuthCommunicationHandler.java:131)
+	at com.bbva.frcs.gdocs.GDocsClient.getDocumentPermissions(GDocsClient.java:163)
+	at com.bbva.hoggtoolsp.drivers.GDocsClientRobot.getPermisos(GDocsClientRobot.java:100)
+	at com.bbva.hoggtoolsp.drivers.GDocsClientRobot.usuarioConPermisos(GDocsClientRobot.java:115)
+	at com.bbva.hoggtoolsp.load.GestorGDocs.obtenerPuntero(GestorGDocs.java:37)
+	at com.bbva.hoggtoolsp.core.ImportacionTest.main(ImportacionTest.java:74)
+com.google.api.client.googleapis.json.GoogleJsonResponseException: 400 Bad Request
+	at com.google.api.client.googleapis.json.GoogleJsonResponseException.from(GoogleJsonResponseException.java:145)
+	at com.google.api.client.googleapis.services.json.AbstractGoogleJsonClientRequest.newExceptionOnError(AbstractGoogleJsonClientRequest.java:113)
+	at com.google.api.client.googleapis.services.json.AbstractGoogleJsonClientRequest.newExceptionOnError(AbstractGoogleJsonClientRequest.java:40)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest$1.interceptResponse(AbstractGoogleClientRequest.java:312)
+	at com.google.api.client.http.HttpRequest.execute(HttpRequest.java:1049)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.executeUnparsed(AbstractGoogleClientRequest.java:410)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.executeUnparsed(AbstractGoogleClientRequest.java:343)
+	at com.google.api.client.googleapis.services.AbstractGoogleClientRequest.execute(AbstractGoogleClientRequest.java:460)
+	at com.fga.utils.OAuthUtils.getOAuth2TokenInfo(OAuthUtils.java:40)
+	at com.fga.oauth.client.OAuthClient.setOAuthV2Credentials(OAuthClient.java:671)
+	at com.fga.helpers.impl.GenericOAUthHelper.createOAuthClient(GenericOAUthHelper.java:120)
+	at com.fga.helpers.impl.GenericOAUthHelper.invokeUrlResponse(GenericOAUthHelper.java:91)
+	at com.fga.helpers.GenericHelper.retrieveResponse(GenericHelper.java:88)
+	at com.bbva.frcs.OAuthCommunicationHandler.doGet(OAuthCommunicationHandler.java:131)
+	at com.bbva.frcs.gdocs.GDocsClient.getDocumentPermissions(GDocsClient.java:163)
+	at com.bbva.hoggtoolsp.drivers.GDocsClientRobot.getPermisos(GDocsClientRobot.java:100)
+	at com.bbva.hoggtoolsp.drivers.GDocsClientRobot.usuarioConPermisos(GDocsClientRobot.java:115)
+	at com.bbva.hoggtoolsp.load.GestorGDocs.obtenerPuntero(GestorGDocs.java:37)
+	at com.bbva.hoggtoolsp.core.ImportacionTest.main(ImportacionTest.java:74)
+
+
+

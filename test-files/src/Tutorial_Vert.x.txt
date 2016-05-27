@@ -1,0 +1,106 @@
+Vert.x tutorial
+
+NOTE: samples
+http://www.smartjava.org/content/create-simpe-restful-service-vertx-20-rxjava-and-mongodb
+http://www.hascode.com/2013/11/creating-a-websocket-chat-application-with-vert-x-and-java/
+
+>>>>> What is Vert.x
+
+http://vertx.io/
+
+"Vert.x is a lightweight, high performance application platform for the JVM that's designed for modern mobile, web, and enterprise applications."
+
+· Polyglot: several programming languages
+· Simple, powerful, APIs enable you to write non-blocking network
+· Scales using messaging passing to efficiently utilise your server cores
+· Concurrency: Simple actor-like concurrency model frees you from the pitfalls of traditional multi-threaded programming.
+
+And so on
+
+See also http://vertx.io/manual.html#what-is-vertx
+
+>>>>> Installation Guide
+
+http://vertx.io/install.html
+
+· Donwload
+· Unzip (tar -zxf ~/Applications/vert.x-2.0.0-final.tar.gz)
+[· Add to path]
+· Check the version ($ vertx version)
+· Testing the install
+
+cd ~/Documents/vert.x
+
+Save the following in Server.java
+
+import org.vertx.java.core.Handler;
+  import org.vertx.java.core.http.HttpServerRequest;
+  import org.vertx.java.platform.Verticle;
+
+  public class Server extends Verticle {
+      public void start() {
+          vertx.createHttpServer().requestHandler(new Handler<HttpServerRequest>() {
+              public void handle(HttpServerRequest req) {
+                  String file = req.path().equals("/") ? "index.html" : req.path();
+                  req.response().sendFile("webroot/" + file);
+              }
+          }).listen(8080);
+      }
+  }
+
+jbeneito@jbeneito-Latitude-3540:~/Documents/vert.x$ vertx run Server.java
+Succeeded in deploying verticle 
+
+Go to http://localhost:8080/
+
+Ctrl+C
+
+>>>>> Core concepts
+
+http://vertx.io/manual.html
+
+Verticle, Module (http://vertx.io/mods_manual.html), Event Loops, Worker Verticles
+
+
+>>>>> Wtiting Java Vert.x applications
+
+http://vertx.io/core_manual_java.html
+
+· Use maven archetype: http://vertx.io/maven_dev.html
+· Run
+http://vertx.io/mods_manual.html#running-a-module-from-the-command-line
+http://vertx.io/manual.html#running-mods
+
+From http://vertx.io/mods_manual.html --> How Vert.x locates modules --> 
+
+Vert.x looks in the following places: [...]  and your local Maven repository (if any).
+
+ mvn clean install -DskipTests
+
+ See also 
+ http://vertx.io/mods_manual.html#runnable and "Module Identifier" and "Module descriptor file - mod.json"
+
+
+Mapping a Module Identifier to Maven co-ordinates
+
+When looking for a module in a Maven repository, Vert.x maps the module identifier to Maven co-ordinates as follows:
+
+GroupID = Owner
+ArtifactID = Name
+Version = Version
+
+E.g. for the module identifier com.mycompany~my-mod~1.2-beta the Maven co-ordinates would be
+
+GroupID: com.mycompany
+ArtifactID: my-mod
+Version: 1.2-beta
+
+The artifact type is always assumed to be a zip and to have a Maven classifier of mod.
+
+ vertx runmod com.malsolo.vertx~solovertx~1.0-SNAPSHOT
+
+ EXAMPLES
+
+https://github.com/vert-x/vertx-examples/tree/master/src/raw/java/echo
+https://github.com/vert-x/vertx-examples/blob/master/src/raw/java/eventbus_pointtopoint/Sender.java
+https://github.com/vert-x/vertx-examples/blob/master/src/raw/java/eventbus_pubsub/Sender.java
