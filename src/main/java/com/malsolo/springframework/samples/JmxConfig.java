@@ -5,13 +5,12 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.jmx.export.MBeanExporter;
 import org.springframework.jmx.support.MBeanServerFactoryBean;
 
 import com.malsolo.springframework.samples.replicator.FileReplicator;
 
-@Configuration
+//@Configuration
 public class JmxConfig {
 
     @Autowired

@@ -8,9 +8,13 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
+import org.springframework.jmx.export.annotation.ManagedOperation;
+import org.springframework.jmx.export.annotation.ManagedResource;
+
 import lombok.Data;
 
 @Data
+@ManagedResource(description = "File replicator")
 public class FileReplicatorJMXImpl implements FileReplicator {
 
     private String srcDir;
@@ -20,6 +24,7 @@ public class FileReplicatorJMXImpl implements FileReplicator {
     private FileCopier fileCopier;
 
     @Override
+    @ManagedOperation(description = "Replicate files")
     public synchronized void replicate() throws IOException {
         // @formatter:off
         try (Stream<Path> list = Files.list(Paths.get(srcDir))) {
