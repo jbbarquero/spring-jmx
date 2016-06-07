@@ -15,9 +15,17 @@ public class Main {
     @Value("${file.targetDir}")
     private String targetDir;
 
+    @Value("${os.version}")
+    private String osVersion;
+
     @Bean
     public String text() {
         return new String(targetDir);
+    }
+
+    @Bean
+    public String theOsVersion() {
+        return new String(osVersion);
     }
 
     @Bean
@@ -38,6 +46,7 @@ public class Main {
             System.out.println(context.getBean("text"));
             System.out.println(environment.getProperty("JAVA_HOME"));
             System.out.println(environment.getProperty("java.version"));
+            System.out.println(context.getBean("theOsVersion"));
         }
     }
 
